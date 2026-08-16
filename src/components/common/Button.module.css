@@ -1,0 +1,35 @@
+/* src/components/common/Button.module.css */
+.button {
+  padding: var(--space-xs) var(--space-m);
+  font-family: var(--font-family-mono);
+  font-size: var(--fs-400);
+  font-weight: 600;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-smooth);
+  text-transform: uppercase;
+}
+
+.primary {
+  background: var(--color-accent-primary);
+  color: var(--color-dark-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.primary:hover {
+  background: transparent;
+  color: var(--color-accent-primary);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.secondary:hover {
+  background: var(--color-accent-primary);
+  color: var(--color-dark-primary);
+  border-color: var(--color-accent-primary);
+}

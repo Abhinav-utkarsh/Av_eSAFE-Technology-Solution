@@ -1,0 +1,1653 @@
+/* =========================================================
+   src/pages/Ecosystem.module.css
+   ========================================================= */
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.ecosystemPage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.ecosystemHero {
+  position: relative;
+  min-height: 430px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding-top: calc(var(--navbar-height) + 55px);
+  padding-bottom: 80px;
+
+  z-index: 1;
+}
+
+
+.heroContent {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 0 25px;
+
+  box-sizing: border-box;
+}
+
+
+.heroEyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.heroEyebrow svg {
+  flex-shrink: 0;
+}
+
+
+.heroContent h1 {
+  max-width: 900px;
+
+  margin: 0 0 20px;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.8px;
+}
+
+
+.heroContent h1 span {
+  color: var(--color-accent-primary);
+}
+
+
+.heroContent p {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FOUNDER / INTRO SECTION
+   ========================================================= */
+
+.introSection {
+  position: relative;
+
+  padding: 85px 0 105px;
+
+  border-top: 1px solid rgba(0, 220, 255, 0.12);
+
+  border-bottom: 1px solid rgba(0, 220, 255, 0.12);
+
+  z-index: 1;
+}
+
+
+.founderIntroGrid {
+  width: 100%;
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 360px minmax(0, 1fr);
+
+  gap: 75px;
+
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   FOUNDER CARD
+   ========================================================= */
+
+.founderCard {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 500px;
+
+  padding: 42px 30px 35px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  border: 1px solid rgba(0, 220, 255, 0.2);
+
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(0, 220, 255, 0.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(18, 30, 58, 0.95),
+      rgba(8, 13, 30, 0.98)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+
+.founderCard::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  top: -130px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(0, 220, 255, 0.10);
+
+  filter: blur(55px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FOUNDER AVATAR
+   ========================================================= */
+
+.founderAvatarWrapper {
+  position: relative;
+
+  width: 180px;
+  height: 180px;
+
+  margin: 0 auto 25px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.founderGlow {
+  position: absolute;
+
+  inset: -18px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 220, 255, 0.15);
+
+  filter: blur(22px);
+
+  pointer-events: none;
+}
+
+
+.founderAvatar {
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  width: 180px !important;
+  height: 180px !important;
+
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border: 2px solid var(--color-accent-primary);
+
+  border-radius: 50%;
+
+  background: #10182f;
+
+  box-shadow:
+    0 0 30px rgba(0, 220, 255, 0.20);
+}
+
+
+.avatarFallback {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-accent-primary);
+
+  border-radius: 50%;
+
+  border: 2px solid var(--color-accent-primary);
+
+  background: #10182f;
+}
+
+
+/* =========================================================
+   FOUNDER TEXT
+   ========================================================= */
+
+.founderEyebrow {
+  position: relative;
+
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.68rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+.founderCard h2 {
+  position: relative;
+
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.7rem;
+
+  line-height: 1.2;
+}
+
+
+.founderRole {
+  position: relative;
+
+  margin: 8px 0 18px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.68rem;
+
+  line-height: 1.5;
+}
+
+
+.founderShortBio {
+  position: relative;
+
+  max-width: 280px;
+
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.86rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOUNDER TAGS
+   ========================================================= */
+
+.founderTags {
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  max-width: 300px;
+
+  margin-top: 20px;
+}
+
+
+.founderTags span {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(0, 220, 255, 0.16);
+
+  border-radius: 999px;
+
+  color: var(--color-text-secondary);
+
+  background: rgba(0, 220, 255, 0.035);
+
+  font-size: 0.63rem;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   FOUNDER PROFILE
+   ========================================================= */
+
+.founderProfileLink {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 22px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.68rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    opacity 0.2s ease,
+    gap 0.2s ease;
+}
+
+
+.founderProfileLink:hover {
+  gap: 10px;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   INTRO CONTENT
+   ========================================================= */
+
+.introContent {
+  width: 100%;
+
+  max-width: 720px;
+
+  min-width: 0;
+}
+
+
+.introLabel {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+
+.introLabel span {
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.72rem;
+
+  letter-spacing: 1.8px;
+
+  white-space: nowrap;
+}
+
+
+.introLine {
+  width: 55px;
+  height: 1px;
+
+  background: rgba(0, 220, 255, 0.4);
+}
+
+
+.introContent h2 {
+  max-width: 700px;
+
+  margin: 0 0 25px;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -1px;
+}
+
+
+.introContent h2 strong {
+  color: var(--color-accent-primary);
+}
+
+
+.introContent > p {
+  max-width: 700px;
+
+  margin: 0 0 18px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.98rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.founderQuote {
+  position: relative;
+
+  max-width: 650px;
+
+  margin-top: 28px;
+
+  padding: 20px 25px 20px 28px;
+
+  box-sizing: border-box;
+
+  border-left: 2px solid var(--color-accent-primary);
+
+  background: rgba(0, 220, 255, 0.035);
+}
+
+
+.quoteMark {
+  position: absolute;
+
+  top: -14px;
+  left: 10px;
+
+  color: var(--color-accent-primary);
+
+  font-size: 35px;
+
+  line-height: 1;
+}
+
+
+.founderQuote p {
+  margin: 0 !important;
+
+  color: var(--color-text-primary) !important;
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.82rem !important;
+
+  line-height: 1.6 !important;
+}
+
+
+.quoteAuthor {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.62rem;
+}
+
+
+/* =========================================================
+   INTRO ACTIONS
+   ========================================================= */
+
+.introActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+}
+
+
+.outlineButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(0, 220, 255, 0.28);
+
+  border-radius: 7px;
+
+  color: var(--color-text-primary);
+
+  background: rgba(0, 220, 255, 0.025);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.7rem;
+
+  text-decoration: none;
+
+  transition:
+    all 0.25s ease;
+}
+
+
+.outlineButton:hover {
+  background: rgba(0, 220, 255, 0.08);
+
+  border-color: var(--color-accent-primary);
+
+  transform: translateY(-2px);
+}
+
+
+.textButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.7rem;
+
+  text-decoration: none;
+
+  transition: gap 0.2s ease;
+}
+
+
+.textButton:hover {
+  gap: 10px;
+}
+
+
+/* =========================================================
+   THREE PILLARS
+   ========================================================= */
+
+.pillarsSection {
+  padding: 100px 0;
+}
+
+
+.sectionHeading {
+  max-width: 760px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+
+.sectionHeading > span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+}
+
+
+.sectionHeading h2 {
+  margin: 0 0 18px;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+
+  line-height: 1.1;
+}
+
+
+.sectionHeading h2 strong {
+  color: var(--color-accent-primary);
+}
+
+
+.sectionHeading p {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.75;
+}
+
+
+.pillarsGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+.pillarCard {
+  position: relative;
+
+  min-height: 430px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border: 1px solid rgba(0, 220, 255, 0.15);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 27, 53, 0.82),
+      rgba(7, 12, 28, 0.94)
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.pillarCard:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 220, 255, 0.38);
+}
+
+
+.pillarTop {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+
+.pillarIcon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-accent-primary);
+
+  border: 1px solid rgba(0, 220, 255, 0.2);
+
+  border-radius: 12px;
+
+  background: rgba(0, 220, 255, 0.04);
+}
+
+
+.pillarNumber {
+  color: rgba(255, 255, 255, 0.28);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.75rem;
+}
+
+
+.pillarLabel {
+  margin-bottom: 9px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.62rem;
+
+  letter-spacing: 1.5px;
+}
+
+
+.pillarCard h3 {
+  margin: 0 0 16px;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.45rem;
+}
+
+
+.pillarDescription {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.88rem;
+
+  line-height: 1.75;
+}
+
+
+.capabilities {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+
+.capability {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.75rem;
+}
+
+
+.capability > span {
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-accent-primary);
+}
+
+
+.pillarFooter {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.68rem;
+
+  text-decoration: none;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.pillarFooter:hover {
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   ECOSYSTEM ENGINE
+   ========================================================= */
+
+.engineSection {
+  padding: 100px 0;
+
+  border-top: 1px solid rgba(0, 220, 255, 0.08);
+}
+
+
+.engineHeader {
+  max-width: 800px;
+
+  margin-bottom: 45px;
+}
+
+
+.engineHeader > span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+}
+
+
+.engineHeader h2 {
+  margin: 0 0 18px;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+
+  line-height: 1.1;
+}
+
+
+.engineHeader h2 strong {
+  color: var(--color-accent-primary);
+}
+
+
+.engineHeader p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+
+.engineGrid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+.engineCard {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  min-height: 235px;
+
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(0, 220, 255, 0.12);
+
+  border-radius: 16px;
+
+  background: rgba(12, 20, 42, 0.7);
+}
+
+
+.engineIcon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-accent-primary);
+
+  border-radius: 10px;
+
+  background: rgba(0, 220, 255, 0.05);
+}
+
+
+.engineCard h3 {
+  margin: 0 0 8px;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.1rem;
+}
+
+
+.engineCard p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.8rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTINUOUS INNOVATION
+   ========================================================= */
+
+.innovationSection {
+  padding: 100px 0;
+}
+
+
+.innovationCard {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+  padding: 65px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(0, 220, 255, 0.14);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 29, 57, 0.9),
+      rgba(7, 12, 28, 0.96)
+    );
+}
+
+
+.innovationVisual {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.orbit {
+  position: absolute;
+
+  border: 1px solid rgba(0, 220, 255, 0.16);
+
+  border-radius: 50%;
+}
+
+
+.orbitOne {
+  width: 300px;
+  height: 300px;
+
+  animation: orbitRotate 25s linear infinite;
+}
+
+
+.orbitTwo {
+  width: 220px;
+  height: 220px;
+
+  animation: orbitRotateReverse 18s linear infinite;
+}
+
+
+.orbitThree {
+  width: 140px;
+  height: 140px;
+
+  animation: orbitRotate 12s linear infinite;
+}
+
+
+.innovationCore {
+  position: relative;
+
+  z-index: 5;
+
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-accent-primary);
+
+  border-radius: 50%;
+
+  color: var(--color-accent-primary);
+
+  background: #0c1830;
+
+  box-shadow:
+    0 0 35px rgba(0, 220, 255, 0.18);
+}
+
+
+@keyframes orbitRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes orbitRotateReverse {
+
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+.innovationContent {
+  max-width: 650px;
+}
+
+
+.innovationContent > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+}
+
+
+.innovationContent h2 {
+  margin: 0 0 20px;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+
+  line-height: 1.1;
+}
+
+
+.innovationContent h2 strong {
+  color: var(--color-accent-primary);
+}
+
+
+.innovationContent > p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.8;
+}
+
+
+.innovationPoints {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+
+.innovationPoints > div {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 13px;
+
+  border: 1px solid rgba(0, 220, 255, 0.14);
+
+  border-radius: 999px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.7rem;
+}
+
+
+.innovationPoints svg {
+  color: var(--color-accent-primary);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.ecosystemCta {
+  padding: 80px 0 110px;
+}
+
+
+.ctaInner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  padding: 55px 60px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(0, 220, 255, 0.15);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 220, 255, 0.045),
+      rgba(10, 16, 35, 0.9)
+    );
+}
+
+
+.ctaInner > div {
+  max-width: 700px;
+}
+
+
+.ctaInner > div > span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 2px;
+}
+
+
+.ctaInner h2 {
+  margin: 0 0 15px;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  line-height: 1.1;
+}
+
+
+.ctaInner h2 strong {
+  color: var(--color-accent-primary);
+}
+
+
+.ctaInner p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+
+.ctaButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-width: 210px;
+
+  min-height: 50px;
+
+  padding: 0 22px;
+
+  box-sizing: border-box;
+
+  flex-shrink: 0;
+
+  border-radius: 6px;
+
+  background: var(--color-accent-primary);
+
+  color: #04111b;
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 220, 255, 0.15);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .founderIntroGrid {
+    grid-template-columns: 320px minmax(0, 1fr);
+
+    gap: 50px;
+  }
+
+
+  .engineGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .innovationCard {
+    gap: 45px;
+
+    padding: 50px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .ecosystemHero {
+    min-height: 400px;
+
+    padding-top: calc(var(--navbar-height) + 40px);
+  }
+
+
+  .founderIntroGrid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+
+  .founderCard {
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+  }
+
+
+  .introContent {
+    max-width: 760px;
+
+    margin: 0 auto;
+  }
+
+
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .pillarCard {
+    min-height: auto;
+  }
+
+
+  .innovationCard {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    text-align: center;
+  }
+
+
+  .innovationContent {
+    max-width: 760px;
+
+    margin: 0 auto;
+  }
+
+
+  .innovationPoints {
+    justify-content: center;
+  }
+
+
+  .ctaInner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .ecosystemHero {
+    min-height: 350px;
+
+    padding-top: calc(var(--navbar-height) + 30px);
+
+    padding-bottom: 55px;
+  }
+
+
+  .heroContent {
+    padding: 0 20px;
+  }
+
+
+  .heroContent h1 {
+    font-size: 2.35rem;
+
+    letter-spacing: -1px;
+  }
+
+
+  .heroContent p {
+    font-size: 0.9rem;
+  }
+
+
+  .introSection {
+    padding: 60px 0 75px;
+  }
+
+
+  .founderIntroGrid {
+    gap: 45px;
+  }
+
+
+  .founderCard {
+    min-height: auto;
+
+    padding: 35px 22px 30px;
+  }
+
+
+  .founderAvatarWrapper,
+  .founderAvatar {
+    width: 155px !important;
+    height: 155px !important;
+  }
+
+
+  .introContent h2 {
+    font-size: 2rem;
+  }
+
+
+  .introContent > p {
+    font-size: 0.88rem;
+  }
+
+
+  .introLabel {
+    flex-wrap: wrap;
+  }
+
+
+  .introLine {
+    display: none;
+  }
+
+
+  .introActions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+
+  .outlineButton {
+    width: 100%;
+  }
+
+
+  .textButton {
+    justify-content: center;
+
+    padding: 8px;
+  }
+
+
+  .pillarsSection,
+  .engineSection,
+  .innovationSection {
+    padding: 70px 0;
+  }
+
+
+  .sectionHeading {
+    margin-bottom: 40px;
+  }
+
+
+  .sectionHeading h2,
+  .engineHeader h2 {
+    font-size: 2rem;
+  }
+
+
+  .engineGrid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .innovationCard {
+    padding: 35px 22px;
+  }
+
+
+  .innovationVisual {
+    width: 230px;
+    height: 230px;
+  }
+
+
+  .orbitOne {
+    width: 230px;
+    height: 230px;
+  }
+
+
+  .orbitTwo {
+    width: 170px;
+    height: 170px;
+  }
+
+
+  .orbitThree {
+    width: 110px;
+    height: 110px;
+  }
+
+
+  .ctaInner {
+    padding: 40px 25px;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+
+  .ctaInner h2 {
+    font-size: 2rem;
+  }
+
+
+  .ctaButton {
+    width: 100%;
+  }
+
+}

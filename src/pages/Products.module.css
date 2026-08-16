@@ -1,0 +1,957 @@
+/* =========================================================
+   PRODUCTS PAGE
+   ========================================================= */
+
+.productsPage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PAGE HERO
+   ========================================================= */
+
+.productsHero {
+  position: relative;
+  text-align: center;
+
+  padding-top: calc(
+    var(--navbar-height) + var(--space-2xl)
+  );
+
+  padding-bottom: var(--space-2xl);
+  padding-inline: var(--space-l);
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-bottom: var(--space-m);
+
+  font-family: var(--font-family-mono);
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: var(--color-accent-primary);
+}
+
+.heroContent h1 {
+  max-width: 900px;
+
+  margin: 0 auto var(--space-m);
+
+  font-size: clamp(2.8rem, 6vw, 5rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+.heroContent h1 span {
+  color: var(--color-accent-primary);
+}
+
+.heroContent > p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--fs-500);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUCTS SECTION
+   ========================================================= */
+
+.productsSection {
+  position: relative;
+
+  padding-block:
+    var(--space-2xl)
+    var(--space-3xl);
+}
+
+.sectionHeading {
+  max-width: 760px;
+
+  margin-bottom: var(--space-2xl);
+}
+
+.sectionHeading > span {
+  display: block;
+
+  margin-bottom: var(--space-s);
+
+  font-family: var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: var(--color-accent-primary);
+}
+
+.sectionHeading h2 {
+  margin: 0 0 var(--space-m);
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  line-height: 1.15;
+}
+
+.sectionHeading h2 strong {
+  color: var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.sectionHeading p {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.productsGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.productCard {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 480px;
+
+  /* Increased card breathing room */
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(22, 24, 48, 0.96),
+      rgba(11, 13, 31, 0.94)
+    );
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.22);
+
+  border-radius: var(--radius-m);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   ATMOSPHERIC GLOW
+   ========================================================= */
+
+.productCard::before {
+  content: '';
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -130px;
+  right: -100px;
+
+  background:
+    rgba(0, 210, 255, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   BOTTOM HIGHLIGHT
+   ========================================================= */
+
+.productCard::after {
+  content: '';
+
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+
+  bottom: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 220, 255, 0.5),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.productCard:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(0, 220, 255, 0.55);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(0, 200, 255, 0.08),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.05);
+}
+
+.productCard:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.cardTop {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.cardIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  color:
+    var(--color-accent-primary);
+
+  background:
+    rgba(0, 200, 255, 0.08);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.25);
+
+  border-radius: var(--radius-s);
+
+  box-shadow:
+    0 0 25px
+    rgba(0, 200, 255, 0.05);
+}
+
+.cardNumber {
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 1px;
+
+  color:
+    rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================================
+   CARD CATEGORY
+   ========================================================= */
+
+.productCard .cardCategory {
+  position: relative;
+
+  z-index: 1;
+
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 10px;
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  color:
+    var(--color-accent-primary);
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.productCard h3 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0 0 10px;
+
+  font-size: var(--fs-700);
+
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   CARD TAGLINE
+   ========================================================= */
+
+.productCard h4 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0 0 18px;
+
+  font-size: var(--fs-300);
+
+  font-weight: 500;
+
+  line-height: 1.5;
+
+  color:
+    var(--color-text-secondary);
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.cardDescription {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-300);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CAPABILITIES
+   ========================================================= */
+
+.capabilities {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin-top: 28px;
+}
+
+.capability {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: var(--fs-200);
+
+  line-height: 1.4;
+}
+
+.capability span {
+  flex: 0 0 auto;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-accent-primary);
+
+  box-shadow:
+    0 0 8px
+    rgba(0, 220, 255, 0.6);
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.cardFooter {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: var(--space-s);
+
+  margin-top: auto;
+
+  padding-top: 28px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  color:
+    var(--color-accent-primary);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.productCard:hover .cardFooter {
+  gap: 16px;
+}
+
+
+/* =========================================================
+   PRODUCT PHILOSOPHY
+   ========================================================= */
+
+.philosophySection {
+  position: relative;
+
+  padding-block: var(--space-3xl);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 17, 38, 0.4),
+      rgba(20, 22, 45, 0.8)
+    );
+
+  border-top:
+    1px solid
+    rgba(0, 220, 255, 0.08);
+
+  border-bottom:
+    1px solid
+    rgba(0, 220, 255, 0.08);
+}
+
+.philosophyGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: var(--space-3xl);
+
+  align-items: start;
+}
+
+.philosophyIntro > span {
+  display: block;
+
+  margin-bottom: var(--space-s);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color:
+    var(--color-accent-primary);
+}
+
+.philosophyIntro h2 {
+  margin: 0 0 var(--space-m);
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.3rem
+    );
+
+  line-height: 1.15;
+}
+
+.philosophyIntro h2 strong {
+  display: block;
+
+  color:
+    var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.philosophyIntro > p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PRINCIPLES
+   ========================================================= */
+
+.principles {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.principle {
+  display: grid;
+
+  grid-template-columns:
+    52px 1fr;
+
+  gap: 18px;
+
+  padding: 24px;
+
+  background:
+    rgba(15, 17, 37, 0.75);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.12);
+
+  border-radius: var(--radius-m);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.principle:hover {
+  transform: translateX(5px);
+
+  background:
+    rgba(20, 23, 47, 0.9);
+
+  border-color:
+    rgba(0, 220, 255, 0.35);
+}
+
+.principleIcon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  color:
+    var(--color-accent-primary);
+
+  background:
+    rgba(0, 200, 255, 0.08);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.18);
+
+  border-radius: var(--radius-s);
+}
+
+.principle h3 {
+  margin: 0 0 7px;
+
+  font-size: var(--fs-400);
+}
+
+.principle p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-300);
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.productCta {
+  padding-block: var(--space-3xl);
+}
+
+.ctaInner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: var(--space-2xl);
+
+  padding: 48px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 22, 48, 0.96),
+      rgba(10, 13, 30, 0.96)
+    );
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.2);
+
+  border-radius: var(--radius-m);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.25);
+}
+
+.ctaInner > div {
+  max-width: 720px;
+}
+
+.ctaInner span {
+  display: block;
+
+  margin-bottom: var(--space-s);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  color:
+    var(--color-accent-primary);
+}
+
+.ctaInner h2 {
+  margin: 0 0 var(--space-s);
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  line-height: 1.15;
+}
+
+.ctaInner h2 strong {
+  color:
+    var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.ctaInner p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.7;
+}
+
+.ctaButton {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 54px;
+
+  padding: 0 26px;
+
+  border: 0;
+
+  border-radius: var(--radius-s);
+
+  background:
+    var(--color-accent-primary);
+
+  color: #061018;
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-300);
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 220, 255, 0.2);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .productsGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .philosophyGrid {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-2xl);
+  }
+
+  .ctaInner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+  .productsHero {
+    padding-top:
+      calc(
+        var(--navbar-height) + var(--space-xl)
+      );
+
+    padding-bottom:
+      var(--space-xl);
+  }
+
+  .heroContent h1 {
+    font-size: 2.5rem;
+
+    letter-spacing: -1px;
+  }
+
+  .heroContent > p {
+    font-size: var(--fs-400);
+  }
+
+  .productsSection {
+    padding-block:
+      var(--space-xl)
+      var(--space-2xl);
+  }
+
+  .sectionHeading {
+    margin-bottom:
+      var(--space-xl);
+  }
+
+  .productsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .productCard {
+    min-height: 440px;
+
+    /* Increased mobile padding */
+    padding: 28px;
+  }
+
+  .cardTop {
+    margin-bottom: 26px;
+  }
+
+  .capabilities {
+    margin-top: 24px;
+  }
+
+  .cardFooter {
+    padding-top: 24px;
+  }
+
+  .philosophySection {
+    padding-block:
+      var(--space-2xl);
+  }
+
+  .principles {
+    gap: 14px;
+  }
+
+  .principle {
+    grid-template-columns:
+      44px 1fr;
+
+    gap: 15px;
+
+    padding: 22px;
+  }
+
+  .principleIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .ctaInner {
+    padding: 28px 24px;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}

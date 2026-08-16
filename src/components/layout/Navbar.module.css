@@ -1,0 +1,735 @@
+/* =========================================================
+   src/components/layout/Navbar.module.css
+   ========================================================= */
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 12px 24px;
+
+  box-sizing: border-box;
+
+  background: transparent;
+
+  border-bottom: 1px solid transparent;
+
+  z-index: 1000;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.header.scrolled {
+  background: var(--color-glass-bg);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid var(--color-border);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   NAVBAR CONTAINER
+   ========================================================= */
+
+.container {
+  width: 100%;
+
+  max-width: 1280px;
+
+  min-height: 62px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   AV_eSAFE BRAND
+   ========================================================= */
+
+.logo {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 245px;
+
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding: 8px 62px 8px 14px;
+
+  border: 1px solid rgba(0, 220, 255, 0.35);
+
+  border-radius: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 220, 255, 0.055),
+      rgba(0, 220, 255, 0.015)
+    );
+
+  text-decoration: none;
+
+  line-height: 1;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.logo:hover {
+  border-color: rgba(0, 220, 255, 0.7);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 220, 255, 0.09),
+      rgba(0, 220, 255, 0.025)
+    );
+
+  box-shadow:
+    0 0 20px rgba(0, 220, 255, 0.08);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGO TEXT WRAPPER
+   ========================================================= */
+
+.logoText {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   MAIN BRAND NAME
+   ========================================================= */
+
+.logoMain {
+  display: block;
+
+  color: var(--color-text-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 1.18rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.4px;
+
+  line-height: 1.1;
+}
+
+
+.logoMain::first-letter {
+  color: var(--color-accent-primary);
+}
+
+
+/* =========================================================
+   COMPANY NAME
+   ========================================================= */
+
+.logoCompany {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--color-accent-primary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1.1px;
+
+  text-transform: uppercase;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
+.logoTagline {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--color-text-secondary);
+
+  font-family: var(--font-family-mono);
+
+  font-size: 0.45rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.75px;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   BRAND ORBIT ICON
+   ========================================================= */
+
+.logoIcon {
+  position: absolute;
+
+  top: 50%;
+
+  right: 12px;
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(0, 220, 255, 0.28);
+
+  border-radius: 50%;
+
+  color: var(--color-accent-primary);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 220, 255, 0.12),
+      rgba(0, 220, 255, 0.025)
+    );
+
+  box-shadow:
+    0 0 18px rgba(0, 220, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.logo:hover .logoIcon {
+  transform:
+    translateY(-50%)
+    rotate(15deg);
+
+  border-color: rgba(0, 220, 255, 0.7);
+
+  box-shadow:
+    0 0 22px rgba(0, 220, 255, 0.18);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  margin: 0 auto;
+
+  min-width: 0;
+}
+
+
+.navLink {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 8px 11px;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.navLink::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 0;
+
+  width: 0;
+
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: var(--color-accent-primary);
+
+  transition:
+    width 0.25s ease;
+}
+
+
+.navLink:hover {
+  color: var(--color-text-primary);
+}
+
+
+.navLink:hover::after {
+  width: 55%;
+}
+
+
+.navLink.active {
+  color: var(--color-accent-primary);
+}
+
+
+.navLink.active::after {
+  width: 55%;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.actions {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   LET'S TALK
+   ========================================================= */
+
+.desktopCtaLink {
+  display: inline-flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+
+.desktopCta {
+  min-height: 38px;
+
+  padding: 0 16px;
+
+  font-size: var(--fs-300);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menuButton {
+  display: none;
+
+  width: 40px;
+
+  height: 40px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid transparent;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--color-text-primary);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.menuButton:hover {
+  border-color: var(--color-border);
+
+  background:
+    rgba(0, 220, 255, 0.04);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .container {
+    gap: 15px;
+  }
+
+
+  .logo {
+    width: 220px;
+
+    padding-right: 55px;
+  }
+
+
+  .logoMain {
+    font-size: 1.08rem;
+  }
+
+
+  .logoCompany {
+    font-size: 0.46rem;
+  }
+
+
+  .logoTagline {
+    font-size: 0.41rem;
+  }
+
+
+  .logoIcon {
+    right: 9px;
+
+    width: 39px;
+
+    height: 39px;
+  }
+
+
+  .nav {
+    gap: 0;
+  }
+
+
+  .navLink {
+    padding: 8px 8px;
+
+    font-size: 0.78rem;
+  }
+
+
+  .desktopCta {
+    padding: 0 13px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .header {
+    padding: 10px 18px;
+  }
+
+
+  .container {
+    min-height: 55px;
+  }
+
+
+  .logo {
+    width: 220px;
+
+    min-height: 55px;
+
+    padding-right: 55px;
+  }
+
+
+  .nav {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    margin: 0;
+
+    padding: 18px 20px 22px;
+
+    background: var(--color-dark-primary);
+
+    border-top: 1px solid var(--color-border);
+
+    border-bottom: 1px solid var(--color-border);
+
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+
+
+  .navOpen {
+    display: flex;
+  }
+
+
+  .navLink {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 12px 0;
+
+    justify-content: center;
+
+    font-size: var(--fs-500);
+  }
+
+
+  .navLink::after {
+    display: none;
+  }
+
+
+  .desktopCtaLink {
+    display: none;
+  }
+
+
+  .menuButton {
+    display: flex;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .header {
+    padding: 9px 14px;
+  }
+
+
+  .container {
+    min-height: 52px;
+  }
+
+
+  .logo {
+    width: 190px;
+
+    min-height: 52px;
+
+    padding:
+      7px
+      52px
+      7px
+      11px;
+  }
+
+
+  .logoMain {
+    font-size: 0.98rem;
+  }
+
+
+  .logoCompany {
+    margin-top: 3px;
+
+    font-size: 0.40rem;
+
+    letter-spacing: 0.8px;
+  }
+
+
+  .logoTagline {
+    margin-top: 4px;
+
+    font-size: 0.37rem;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  .logoIcon {
+    right: 9px;
+
+    width: 36px;
+
+    height: 36px;
+  }
+
+
+  .logoIcon svg {
+    width: 24px;
+
+    height: 24px;
+  }
+
+
+  .menuButton {
+    width: 38px;
+
+    height: 38px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .logo {
+    width: 175px;
+
+    min-height: 50px;
+
+    padding:
+      6px
+      48px
+      6px
+      9px;
+  }
+
+
+  .logoMain {
+    font-size: 0.9rem;
+  }
+
+
+  .logoCompany {
+    font-size: 0.36rem;
+  }
+
+
+  .logoTagline {
+    font-size: 0.33rem;
+  }
+
+
+  .logoIcon {
+    right: 7px;
+
+    width: 34px;
+
+    height: 34px;
+  }
+
+
+  .logoIcon svg {
+    width: 22px;
+
+    height: 22px;
+  }
+
+}

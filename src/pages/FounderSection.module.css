@@ -1,0 +1,699 @@
+/* =========================================================
+   FOUNDER SECTION
+   ========================================================= */
+
+.founderSection {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 100px 40px;
+
+  text-align: left;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   FOUNDER CONTENT WRAPPER
+   ========================================================= */
+
+.founderGrid {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 70px auto 0;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: 330px minmax(0, 1fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.profileCard {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 36px 28px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19, 28, 55, 0.96),
+      rgba(7, 12, 28, 0.96)
+    );
+
+  border: 1px solid rgba(0, 220, 255, 0.18);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.28);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.profileCard:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(0, 220, 255, 0.4);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+/* subtle glow */
+
+.profileCard::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  top: -130px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background:
+    rgba(0, 210, 255, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(60px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.avatarWrapper {
+  position: relative;
+
+  width: 190px;
+  height: 190px;
+
+  margin: 0 auto 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  width: 170px;
+  height: 170px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid
+    rgba(0, 220, 255, 0.55);
+
+  background: #101a32;
+
+  box-shadow:
+    0 0 45px
+    rgba(0, 210, 255, 0.18);
+}
+
+.avatarGlow {
+  position: absolute;
+
+  z-index: 1;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 210, 255, 0.15);
+
+  filter: blur(30px);
+
+  animation:
+    avatarPulse 4s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.75;
+  }
+}
+
+
+/* =========================================================
+   PROFILE INFORMATION
+   ========================================================= */
+
+.profileInfo {
+  position: relative;
+
+  z-index: 3;
+}
+
+.profileInfo h3 {
+  margin: 0 0 8px;
+
+  font-size: 1.65rem;
+
+  line-height: 1.2;
+}
+
+.profileInfo p {
+  margin: 0;
+
+  color:
+    var(--color-accent-primary);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROFILE TAGS
+   ========================================================= */
+
+.profileTags {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 26px;
+}
+
+.profileTags span {
+  padding: 8px 13px;
+
+  color:
+    var(--color-text-secondary);
+
+  background:
+    rgba(0, 200, 255, 0.045);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.14);
+
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+   ========================================================= */
+
+.founderContent {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.founderIntro {
+  margin: 0 0 30px;
+}
+
+.founderIntro > span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color:
+    var(--color-accent-primary);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: 0.85rem;
+
+  letter-spacing: 2px;
+}
+
+.founderIntro h3 {
+  margin: 0;
+
+  max-width: 760px;
+
+  font-size:
+    clamp(
+      2.2rem,
+      4vw,
+      3.5rem
+    );
+
+  line-height: 1.12;
+
+  letter-spacing: -1px;
+}
+
+.founderIntro h3 strong {
+  color:
+    var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+
+/* =========================================================
+   BIO
+   ========================================================= */
+
+.founderContent > p {
+  margin: 0 0 22px;
+
+  max-width: 800px;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+.founderContent > p strong {
+  color:
+    var(--color-text-primary);
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FOCUS GRID
+   ========================================================= */
+
+.focusGrid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.focusItem {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-height: 70px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(0, 200, 255, 0.035);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.11);
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.focusItem:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(0, 220, 255, 0.3);
+}
+
+.focusIcon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  color:
+    var(--color-accent-primary);
+
+  background:
+    rgba(0, 200, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.15);
+
+  border-radius: 9px;
+}
+
+.focusItem h4 {
+  margin: 0 0 3px;
+
+  font-size: 0.95rem;
+}
+
+.focusItem p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.profileButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 48px;
+
+  margin-top: 28px;
+
+  padding: 0 20px;
+
+  color:
+    var(--color-text-primary);
+
+  background:
+    rgba(0, 200, 255, 0.05);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.25);
+
+  border-radius: 9px;
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.profileButton:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(0, 200, 255, 0.09);
+
+  border-color:
+    rgba(0, 220, 255, 0.55);
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.founderQuote {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin:
+    80px auto 0;
+
+  padding: 40px 48px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background:
+    rgba(15, 20, 42, 0.72);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.13);
+
+  border-radius: 18px;
+}
+
+.quoteMark {
+  position: absolute;
+
+  top: 5px;
+  left: 24px;
+
+  color:
+    var(--color-accent-primary);
+
+  font-family: Georgia, serif;
+
+  font-size: 70px;
+
+  line-height: 1;
+
+  opacity: 0.18;
+}
+
+.founderQuote p {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 760px;
+
+  margin: 0 auto 18px;
+
+  color:
+    var(--color-text-primary);
+
+  font-size:
+    clamp(
+      1.1rem,
+      2vw,
+      1.4rem
+    );
+
+  line-height: 1.7;
+}
+
+.founderQuote span {
+  color:
+    var(--color-accent-primary);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: 0.8rem;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .founderSection {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .founderGrid {
+    max-width: 950px;
+
+    grid-template-columns:
+      290px minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+  .founderIntro h3 {
+    font-size: 2.5rem;
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .founderSection {
+    padding:
+      70px 24px;
+  }
+
+  .founderGrid {
+    max-width: 600px;
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    margin-top: 50px;
+  }
+
+  .profileCard {
+    max-width: 430px;
+
+    margin: 0 auto;
+  }
+
+  .founderContent {
+    width: 100%;
+  }
+
+  .founderIntro h3 {
+    font-size: 2.2rem;
+  }
+
+  .focusGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .founderSection {
+    padding:
+      60px 18px;
+  }
+
+  .founderGrid {
+    margin-top: 40px;
+  }
+
+  .profileCard {
+    padding:
+      30px 20px;
+  }
+
+  .avatarWrapper {
+    width: 165px;
+    height: 165px;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .avatarGlow {
+    width: 160px;
+    height: 160px;
+  }
+
+  .founderIntro h3 {
+    font-size: 1.9rem;
+  }
+
+  .founderContent > p {
+    font-size: 0.95rem;
+  }
+
+  .founderQuote {
+    padding:
+      32px 22px;
+  }
+
+  .profileButton {
+    width: 100%;
+  }
+}

@@ -1,0 +1,88 @@
+/* src/styles/main.css */
+
+/* ------------------------- */
+/* --- DESIGN SYSTEM --- */
+/* ------------------------- */
+
+:root {
+  /* Colors */
+  --color-dark-primary: #0A0A1A; /* Deep, dark blue for backgrounds */
+  --color-dark-secondary: #1A1A2E; /* Slightly lighter dark shade for surfaces */
+  --color-accent-primary: #00F5FF; /* Bright cyan for highlights and CTAs */
+  --color-accent-secondary: #7E57C2; /* Sophisticated purple for secondary accents */
+  --color-text-primary: #E0E0E0; /* Light gray for primary text */
+  --color-text-secondary: #A0A0B0; /* Muted gray for secondary text */
+  --color-glass-bg: rgba(26, 26, 46, 0.6); /* Background for glassmorphism effect */
+  --color-border: rgba(0, 245, 255, 0.2);
+
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+
+  --fs-900: 3.5rem;
+  --fs-800: 2.5rem;
+  --fs-700: 2rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+
+  /* Spacing System (based on 8px grid) */
+  --space-xs: 0.5rem;  /* 8px */
+  --space-s: 1rem;     /* 16px */
+  --space-m: 1.5rem;   /* 24px */
+  --space-l: 2rem;     /* 32px */
+  --space-xl: 3rem;    /* 48px */
+  --space-xxl: 4rem;   /* 64px */
+
+  /* Transitions */
+  --transition-fast: 200ms ease-in-out;
+  --transition-smooth: 400ms ease-in-out;
+
+  /* Border Radius */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 16px;
+}
+
+/* ------------------------- */
+/* --- GLOBAL RESETS & DEFAULTS --- */
+/* ------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-dark-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+a {
+  color: var(--color-accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-text-primary);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}

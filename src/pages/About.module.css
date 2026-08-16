@@ -1,0 +1,958 @@
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.aboutPage {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.storySection {
+  padding-block: var(--space-2xl);
+}
+
+
+/* =========================================================
+   WHO WE ARE
+   ========================================================= */
+
+.identitySection {
+  padding-block: var(--space-3xl);
+}
+
+.identityGrid {
+  display: grid;
+
+  grid-template-columns: 0.35fr 1fr;
+
+  gap: var(--space-3xl);
+
+  align-items: start;
+}
+
+.identityLabel {
+  padding-top: 8px;
+}
+
+.identityLabel span {
+  font-family: var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  color: var(--color-accent-primary);
+}
+
+.identityLine {
+  width: 55px;
+  height: 1px;
+
+  margin-top: var(--space-s);
+
+  background: var(--color-accent-primary);
+
+  opacity: 0.5;
+}
+
+.identityContent {
+  max-width: 850px;
+}
+
+.identityContent h2 {
+  margin: 0 0 var(--space-m);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.3rem
+  );
+
+  line-height: 1.15;
+}
+
+.identityContent h2 strong {
+  color: var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.identityContent p {
+  max-width: 800px;
+
+  margin: 0 0 var(--space-m);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.8;
+}
+
+.identityContent p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   COMMON SECTION HEADING
+   ========================================================= */
+
+.sectionHeading {
+  max-width: 800px;
+
+  margin-bottom: var(--space-2xl);
+}
+
+.sectionHeading > span {
+  display: block;
+
+  margin-bottom: var(--space-s);
+
+  font-family: var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: var(--color-accent-primary);
+}
+
+.sectionHeading h2 {
+  margin: 0 0 var(--space-m);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.2rem
+  );
+
+  line-height: 1.15;
+}
+
+.sectionHeading h2 strong {
+  color: var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.sectionHeading p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.valuesSection {
+  padding-block: var(--space-3xl);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 17, 38, 0.4),
+      rgba(20, 22, 45, 0.8)
+    );
+
+  border-top:
+    1px solid
+    rgba(0, 220, 255, 0.08);
+
+  border-bottom:
+    1px solid
+    rgba(0, 220, 255, 0.08);
+}
+
+.valuesGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.valueCard {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 34px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(22, 24, 48, 0.97),
+      rgba(10, 13, 31, 0.95)
+    );
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.15);
+
+  border-radius: var(--radius-m);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.valueCard::before {
+  content: '';
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -100px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 210, 255, 0.07);
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+.valueCard:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(0, 220, 255, 0.4);
+
+  box-shadow:
+    0 20px 55px
+    rgba(0, 0, 0, 0.3);
+}
+
+.valueIcon {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  margin-bottom: 28px;
+
+  color:
+    var(--color-accent-primary);
+
+  background:
+    rgba(0, 200, 255, 0.08);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.2);
+
+  border-radius: var(--radius-s);
+}
+
+.valueCard h3 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0 0 12px;
+
+  font-size: var(--fs-500);
+}
+
+.valueCard p {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-300);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ENGINEERING PHILOSOPHY
+   ========================================================= */
+
+.philosophySection {
+  padding-block: var(--space-3xl);
+}
+
+.philosophyCard {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
+
+  gap: var(--space-3xl);
+
+  align-items: center;
+
+  padding: 48px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 22, 48, 0.96),
+      rgba(10, 13, 30, 0.96)
+    );
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.18);
+
+  border-radius: var(--radius-m);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   PHILOSOPHY VISUAL
+   ========================================================= */
+
+.philosophyVisual {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 350px;
+}
+
+.philosophyCore {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 90px;
+  height: 90px;
+
+  color:
+    var(--color-accent-primary);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 220, 255, 0.16),
+      rgba(0, 220, 255, 0.03)
+    );
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.45);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 50px
+    rgba(0, 210, 255, 0.12);
+
+  animation:
+    philosophyPulse 3s ease-in-out infinite;
+}
+
+.philosophyOrbit {
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.2);
+
+  border-radius: 50%;
+
+  animation:
+    philosophyRotate 12s linear infinite;
+}
+
+.philosophyOrbitTwo {
+  width: 270px;
+  height: 270px;
+
+  border-color:
+    rgba(0, 220, 255, 0.12);
+
+  animation-duration: 18s;
+
+  animation-direction: reverse;
+}
+
+.philosophyOrbitThree {
+  width: 330px;
+  height: 330px;
+
+  border-color:
+    rgba(0, 220, 255, 0.07);
+
+  animation-duration: 25s;
+}
+
+@keyframes philosophyRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes philosophyPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================================================
+   PHILOSOPHY CONTENT
+   ========================================================= */
+
+.philosophyContent > span {
+  display: block;
+
+  margin-bottom: var(--space-s);
+
+  font-family: var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  color: var(--color-accent-primary);
+}
+
+.philosophyContent h2 {
+  margin: 0 0 var(--space-m);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.2rem
+  );
+
+  line-height: 1.15;
+}
+
+.philosophyContent h2 strong {
+  display: block;
+
+  color: var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.philosophyContent > p {
+  max-width: 680px;
+
+  margin: 0 0 var(--space-l);
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PHILOSOPHY POINTS
+   ========================================================= */
+
+.philosophyPoints {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.philosophyPoints > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  background:
+    rgba(0, 200, 255, 0.04);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.1);
+
+  border-radius: var(--radius-s);
+
+  font-size: var(--fs-200);
+}
+
+.philosophyPoints svg {
+  flex: 0 0 auto;
+
+  color:
+    var(--color-accent-primary);
+}
+
+
+/* =========================================================
+   HOW WE THINK
+   ========================================================= */
+
+.principlesSection {
+  padding-block: var(--space-3xl);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 17, 38, 0.35),
+      rgba(10, 13, 30, 0.75)
+    );
+}
+
+.principlesGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.principleCard {
+  display: grid;
+
+  grid-template-columns: 65px 1fr;
+
+  gap: 20px;
+
+  padding: 30px;
+
+  background:
+    rgba(15, 17, 37, 0.82);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.12);
+
+  border-radius: var(--radius-m);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.principleCard:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(0, 220, 255, 0.35);
+}
+
+.principleNumber {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  color:
+    var(--color-accent-primary);
+
+  background:
+    rgba(0, 200, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.18);
+
+  border-radius: var(--radius-s);
+}
+
+.principleCard h3 {
+  margin: 0 0 8px;
+
+  font-size: var(--fs-400);
+}
+
+.principleCard p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-300);
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   FOUNDER
+   ========================================================= */
+
+.founderSection {
+  padding-block: var(--space-2xl);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.aboutCta {
+  padding-block: var(--space-3xl);
+}
+
+.ctaInner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: var(--space-2xl);
+
+  padding: 48px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 22, 48, 0.96),
+      rgba(10, 13, 30, 0.96)
+    );
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.2);
+
+  border-radius: var(--radius-m);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.25);
+}
+
+.ctaInner > div:first-child {
+  max-width: 720px;
+}
+
+.ctaInner > div:first-child > span {
+  display: block;
+
+  margin-bottom: var(--space-s);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  letter-spacing: 2px;
+
+  color:
+    var(--color-accent-primary);
+}
+
+.ctaInner h2 {
+  margin: 0 0 var(--space-s);
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  line-height: 1.15;
+}
+
+.ctaInner h2 strong {
+  color:
+    var(--color-accent-primary);
+
+  font-weight: inherit;
+}
+
+.ctaInner p {
+  margin: 0;
+
+  color:
+    var(--color-text-secondary);
+
+  font-size: var(--fs-400);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BUTTONS
+   ========================================================= */
+
+.ctaActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 52px;
+
+  padding: 0 22px;
+
+  border-radius: var(--radius-s);
+
+  font-family:
+    var(--font-family-mono);
+
+  font-size: var(--fs-200);
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.primaryButton {
+  background:
+    var(--color-accent-primary);
+
+  color: #061018;
+
+  border:
+    1px solid
+    var(--color-accent-primary);
+}
+
+.secondaryButton {
+  background:
+    rgba(0, 200, 255, 0.05);
+
+  color:
+    var(--color-text-primary);
+
+  border:
+    1px solid
+    rgba(0, 220, 255, 0.25);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-3px);
+}
+
+.primaryButton:hover {
+  box-shadow:
+    0 12px 35px
+    rgba(0, 220, 255, 0.2);
+}
+
+.secondaryButton:hover {
+  border-color:
+    rgba(0, 220, 255, 0.55);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .identityGrid {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-l);
+  }
+
+  .valuesGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .philosophyCard {
+    grid-template-columns: 1fr;
+
+    padding: 40px;
+  }
+
+  .philosophyVisual {
+    min-height: 300px;
+  }
+
+  .ctaInner {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+
+  .storySection,
+  .identitySection,
+  .valuesSection,
+  .philosophySection,
+  .principlesSection,
+  .founderSection,
+  .aboutCta {
+    padding-block: var(--space-2xl);
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueCard {
+    min-height: auto;
+
+    padding: 28px;
+  }
+
+  .philosophyCard {
+    padding: 28px;
+  }
+
+  .philosophyVisual {
+    min-height: 260px;
+  }
+
+  .philosophyCore {
+    width: 72px;
+    height: 72px;
+  }
+
+  .philosophyOrbit {
+    width: 150px;
+    height: 150px;
+  }
+
+  .philosophyOrbitTwo {
+    width: 215px;
+    height: 215px;
+  }
+
+  .philosophyOrbitThree {
+    width: 270px;
+    height: 270px;
+  }
+
+  .philosophyPoints {
+    grid-template-columns: 1fr;
+  }
+
+  .principlesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .principleCard {
+    grid-template-columns: 52px 1fr;
+
+    gap: 15px;
+
+    padding: 24px;
+  }
+
+  .ctaInner {
+    padding: 28px 24px;
+  }
+
+  .ctaActions {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}
