@@ -1,36 +1,38 @@
-/* src/pages/Hero.module.css */
-
-.hero {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 var(--space-l);
-  overflow: hidden;
-  isolation: isolate;
-}
-
 /* =========================================================
-   3D PARTICLE BACKGROUND
+   src/pages/Hero.module.css
    ========================================================= */
 
-.heroAnimation {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
 
-.heroAnimation canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  text-align: center;
+
+  /*
+   * Top spacing for the fixed navbar.
+   * No large bottom spacing.
+   */
+  padding: 110px 0 40px 0;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  position: relative;
+
+  box-sizing: border-box;
 }
 
 
@@ -40,10 +42,18 @@
 
 .heroContent {
   position: relative;
+
   z-index: 2;
+
   width: 100%;
+
   max-width: 1280px;
-  padding: 0 var(--space-l);
+
+  padding: 0;
+
+  margin: 0;
+
+  box-sizing: border-box;
 }
 
 
@@ -53,11 +63,16 @@
 
 .eyebrow {
   font-family: var(--font-family-mono);
+
   font-size: var(--fs-300);
+
   color: var(--color-accent-primary);
+
   text-transform: uppercase;
+
   letter-spacing: 2px;
-  margin-bottom: var(--space-m);
+
+  margin: 0 0 var(--space-m);
 }
 
 
@@ -67,9 +82,12 @@
 
 .title {
   font-size: var(--fs-900);
+
   max-width: 800px;
-  margin-inline: auto;
-  margin-bottom: var(--space-m);
+
+  margin: 0 auto var(--space-m);
+
+  line-height: 1.1;
 }
 
 
@@ -88,10 +106,14 @@
 
 .subtitle {
   font-size: var(--fs-500);
+
   color: var(--color-text-secondary);
+
   max-width: 600px;
-  margin-inline: auto;
-  margin-bottom: var(--space-l);
+
+  margin: 0 auto var(--space-l);
+
+  line-height: 1.6;
 }
 
 
@@ -101,36 +123,146 @@
 
 .ctaContainer {
   display: flex;
-  gap: var(--space-s);
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
-.ctaContainer button {
-  display: flex;
+  gap: var(--space-s);
+
+  justify-content: center;
+
   align-items: center;
+
+  flex-wrap: wrap;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   BUTTON
+   ========================================================= */
+
+.ctaContainer button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   BUTTON LINKS
+   ========================================================= */
+
+.buttonLink {
+  text-decoration: none;
+
+  display: inline-flex;
+}
+
+
+/* =========================================================
+   MOBILE
    ========================================================= */
 
 @media (max-width: 768px) {
+
   .hero {
-    min-height: 100svh;
-    padding: 0 var(--space-m);
+    width: 100%;
+
+    padding: 90px 0 30px 0;
+
+    margin: 0;
+
+    min-height: auto;
   }
 
+
   .heroContent {
-    padding: 0 var(--space-m);
+    width: 100%;
+
+    padding: 0 16px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
   }
+
+
+  .eyebrow {
+    font-size: 0.65rem;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 16px;
+  }
+
 
   .title {
     max-width: 95%;
+
+    font-size: clamp(2.3rem, 9vw, 3.5rem);
+
+    line-height: 1.08;
+
+    margin-bottom: 18px;
   }
+
 
   .subtitle {
     max-width: 90%;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 24px;
   }
+
+
+  .ctaContainer {
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 85px 0 25px 0;
+  }
+
+
+  .heroContent {
+    padding: 0 14px;
+  }
+
+
+  .title {
+    max-width: 100%;
+
+    font-size: 2.1rem;
+  }
+
+
+  .subtitle {
+    max-width: 100%;
+
+    font-size: 0.84rem;
+  }
+
+
+  .ctaContainer {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .buttonLink {
+    width: auto;
+  }
+
 }

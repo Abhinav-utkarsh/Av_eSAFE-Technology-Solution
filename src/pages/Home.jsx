@@ -15,7 +15,6 @@ import { NavLink } from 'react-router-dom';
 import PageContainer from '../components/common/PageContainer';
 
 import Hero from './Hero';
-import TrustStrip from './TrustStrip';
 import ServicesOverview from './ServicesOverview';
 import AboutSection from '../components/3d/AboutSection';
 
@@ -89,8 +88,6 @@ const Home = () => {
       {/* =====================================================
           TRUST STRIP
           ===================================================== */}
-
-      <TrustStrip />
 
 
       <PageContainer>
@@ -323,24 +320,7 @@ const Home = () => {
                   HIGHLIGHTS
                   ================================================= */}
 
-              <div className={styles.ecosystemHighlights}>
-
-                <div>
-                  <BrainCircuit size={17} />
-                  <span>AI &amp; Innovation</span>
-                </div>
-
-                <div>
-                  <Workflow size={17} />
-                  <span>Automation</span>
-                </div>
-
-                <div>
-                  <ShieldCheck size={17} />
-                  <span>Quality Engineering</span>
-                </div>
-
-              </div>
+             
 
 
               {/* =================================================

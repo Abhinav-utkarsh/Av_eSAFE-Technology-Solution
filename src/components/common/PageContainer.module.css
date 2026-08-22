@@ -4,5 +4,5 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--space-xxl) var(--space-l);
-  padding-top: calc(var(--space-xxl) + 80px); /* Offset for fixed navbar */
+  padding-top: 100px; /* Offset for fixed navbar */
 }

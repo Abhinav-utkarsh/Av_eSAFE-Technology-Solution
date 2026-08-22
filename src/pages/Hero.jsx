@@ -1,97 +1,12 @@
 // src/pages/Hero.jsx
 
-import React, { useRef, useMemo, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MathUtils } from 'three';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 import Button from '../components/common/Button';
 import styles from './Hero.module.css';
-
-
-/* =========================================================
-   CENTRAL INTERACTIVE 3D PARTICLE GLOBE
-   ========================================================= */
-
-const InteractiveSphere = ({ mouse }) => {
-  const pointsRef = useRef(null);
-
-  const positions = useMemo(() => {
-    const count = 5500;
-    const radius = 3.4;
-
-    const data = new Float32Array(count * 3);
-
-    for (let i = 0; i < count; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-
-      data[i * 3] =
-        radius *
-        Math.sin(phi) *
-        Math.cos(theta);
-
-      data[i * 3 + 1] =
-        radius *
-        Math.sin(phi) *
-        Math.sin(theta);
-
-      data[i * 3 + 2] =
-        radius *
-        Math.cos(phi);
-    }
-
-    return data;
-  }, []);
-
-  useFrame((_, delta) => {
-    if (!pointsRef.current) return;
-
-    /*
-     * Continuous 3D rotation
-     */
-    pointsRef.current.rotation.y += delta * 0.12;
-
-    /*
-     * Mouse-controlled tilt
-     */
-    const targetX = mouse.current.y * 0.20;
-    const targetZ = -mouse.current.x * 0.20;
-
-    pointsRef.current.rotation.x = MathUtils.lerp(
-      pointsRef.current.rotation.x,
-      targetX,
-      delta * 3
-    );
-
-    pointsRef.current.rotation.z = MathUtils.lerp(
-      pointsRef.current.rotation.z,
-      targetZ,
-      delta * 3
-    );
-  });
-
-  return (
-    <Points
-      ref={pointsRef}
-      positions={positions}
-      stride={3}
-      frustumCulled={false}
-    >
-      <PointMaterial
-        transparent
-        color="#3672FF"
-        size={0.006}
-        sizeAttenuation={true}
-        depthWrite={false}
-        opacity={0.65}
-      />
-    </Points>
-  );
-};
 
 
 /* =========================================================
@@ -107,9 +22,10 @@ const Hero = () => {
   });
 
 
-  /*
-   * Mouse tracking
-   */
+  /* =========================================================
+     MOUSE TRACKING
+     ========================================================= */
+
   useEffect(() => {
     const section = sectionRef.current;
 
@@ -130,26 +46,12 @@ const Hero = () => {
       mouse.current.y = 0;
     };
 
-    section.addEventListener(
-      'mousemove',
-      handleMouseMove
-    );
-
-    section.addEventListener(
-      'mouseleave',
-      handleMouseLeave
-    );
+    section.addEventListener('mousemove', handleMouseMove);
+    section.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
-      section.removeEventListener(
-        'mousemove',
-        handleMouseMove
-      );
-
-      section.removeEventListener(
-        'mouseleave',
-        handleMouseLeave
-      );
+      section.removeEventListener('mousemove', handleMouseMove);
+      section.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, []);
 
@@ -161,33 +63,13 @@ const Hero = () => {
     >
 
       {/* =====================================================
-          3D BACKGROUND
-          DO NOT MODIFY
-          ===================================================== */}
-
-      <div className={styles.heroAnimation}>
-
-        <Canvas
-          camera={{
-            position: [0, 0, 8],
-            fov: 55,
-          }}
-          dpr={[1, 1.5]}
-        >
-
-          <InteractiveSphere mouse={mouse} />
-
-        </Canvas>
-
-      </div>
-
-
-      {/* =====================================================
           HERO CONTENT
+          3D SPHERE REMOVED
           ===================================================== */}
 
       <div className={styles.heroContent}>
 
+        {/* EYEBROW */}
         <motion.div
           className={styles.eyebrow}
           initial={{
@@ -208,6 +90,7 @@ const Hero = () => {
         </motion.div>
 
 
+        {/* TITLE */}
         <motion.h1
           className={styles.title}
           initial={{
@@ -231,6 +114,7 @@ const Hero = () => {
         </motion.h1>
 
 
+        {/* SUBTITLE */}
         <motion.p
           className={styles.subtitle}
           initial={{
@@ -254,7 +138,7 @@ const Hero = () => {
 
 
         {/* ===================================================
-            HERO CTA BUTTONS
+            CTA BUTTONS
             =================================================== */}
 
         <motion.div
@@ -274,16 +158,12 @@ const Hero = () => {
           }}
         >
 
-          {/* -----------------------------------------------
-              EXPLORE OUR SOLUTIONS
-              Goes to Services
-              ----------------------------------------------- */}
+          {/* EXPLORE OUR SOLUTIONS */}
 
           <Link
             to="/services"
             className={styles.buttonLink}
           >
-
             <Button variant="primary">
               Explore Our Solutions
 
@@ -294,24 +174,18 @@ const Hero = () => {
                 }}
               />
             </Button>
-
           </Link>
 
 
-          {/* -----------------------------------------------
-              START A CONVERSATION
-              Goes to Contact
-              ----------------------------------------------- */}
+          {/* START A CONVERSATION */}
 
           <Link
             to="/contact"
             className={styles.buttonLink}
           >
-
             <Button variant="secondary">
               Start a Conversation
             </Button>
-
           </Link>
 
         </motion.div>

@@ -1,51 +1,463 @@
-/* src/components/sections/services/ServiceDetailCard.module.css */
+/* =========================================================
+   src/components/sections/services/ServiceDetailCard.module.css
+   ========================================================= */
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
 .serviceCard {
+  width: 100%;
+  max-width: 100%;
+
   display: flex;
+  flex-direction: row;
+
   gap: var(--space-xl);
+
   align-items: flex-start;
+
   padding: var(--space-xl);
-  margin-bottom: var(--space-xl);
+
+  margin: 0 0 var(--space-xl);
+
+  box-sizing: border-box;
+
+  min-width: 0;
+
+  overflow: hidden;
 }
+
+
+/* =========================================================
+   REVERSED CARD
+   ========================================================= */
 
 .serviceCard.reversed {
   flex-direction: row-reverse;
 }
 
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
 .iconWrapper {
-  color: var(--color-accent-primary);
-  background: rgba(0, 245, 255, 0.1);
-  padding: var(--space-m);
-  border-radius: var(--border-radius-medium);
-  border: 1px solid var(--color-border);
+  width: 64px;
+  height: 64px;
+
   flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  color: var(--color-accent-primary);
+
+  background: rgba(0, 245, 255, 0.1);
+
+  padding: var(--space-m);
+
+  border-radius: var(--border-radius-medium);
+
+  border: 1px solid var(--color-border);
 }
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.serviceCard > div:last-child {
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
 
 .title {
+  width: 100%;
+
+  margin: 0 0 var(--space-s);
+
   font-size: var(--fs-700);
-  margin-bottom: var(--space-s);
+
+  line-height: 1.2;
+
+  overflow-wrap: break-word;
 }
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
 
 .description {
+  width: 100%;
+
+  margin: 0 0 var(--space-m);
+
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-m);
+
+  line-height: 1.7;
+
+  overflow-wrap: break-word;
 }
+
+
+/* =========================================================
+   CAPABILITIES
+   ========================================================= */
 
 .capabilities {
+  width: 100%;
+
   list-style: none;
+
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: var(--space-s);
+
+  margin: 0;
+
+  padding: 0;
+
   font-size: var(--fs-400);
+
+  box-sizing: border-box;
 }
+
+
+/* =========================================================
+   CAPABILITY ITEM
+   ========================================================= */
 
 .capabilities li {
+  min-width: 0;
+
   display: flex;
-  align-items: center;
+
+  align-items: flex-start;
+
   gap: var(--space-xs);
+
   color: var(--color-text-primary);
+
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
 }
 
+
+/* =========================================================
+   CAPABILITY ICON
+   ========================================================= */
+
 .capabilities svg {
-  color: var(--color-accent-primary);
+  width: 16px;
+  height: 16px;
+
   flex-shrink: 0;
+
+  margin-top: 3px;
+
+  color: var(--color-accent-primary);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .serviceCard {
+    gap: var(--space-l);
+
+    padding: var(--space-l);
+  }
+
+  .iconWrapper {
+    width: 58px;
+    height: 58px;
+
+    padding: 14px;
+  }
+
+  .title {
+    font-size: clamp(
+      1.5rem,
+      3vw,
+      2rem
+    );
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .capabilities {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    font-size: 0.85rem;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .serviceCard {
+    gap: 20px;
+
+    padding: 28px 24px;
+
+    margin-bottom: 24px;
+  }
+
+  .iconWrapper {
+    width: 54px;
+    height: 54px;
+
+    padding: 13px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 0.9rem;
+
+    line-height: 1.65;
+  }
+
+  .capabilities {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 10px 14px;
+
+    font-size: 0.8rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .serviceCard,
+  .serviceCard.reversed {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 24px 20px;
+
+    margin-bottom: 18px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* -------------------------------------------------------
+     ICON
+     ------------------------------------------------------- */
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENT
+     ------------------------------------------------------- */
+
+  .serviceCard > div:last-child {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+
+  /* -------------------------------------------------------
+     TITLE
+     ------------------------------------------------------- */
+
+  .title {
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    font-size: 1.35rem;
+
+    line-height: 1.25;
+  }
+
+
+  /* -------------------------------------------------------
+     DESCRIPTION
+     ------------------------------------------------------- */
+
+  .description {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    font-size: 0.84rem;
+
+    line-height: 1.65;
+  }
+
+
+  /* -------------------------------------------------------
+     CAPABILITIES
+     ------------------------------------------------------- */
+
+  .capabilities {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    font-size: 0.78rem;
+  }
+
+
+  .capabilities li {
+    width: 100%;
+
+    min-width: 0;
+
+    align-items: flex-start;
+
+    line-height: 1.5;
+  }
+
+
+  .capabilities svg {
+    width: 15px;
+    height: 15px;
+
+    margin-top: 2px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .serviceCard,
+  .serviceCard.reversed {
+    padding: 20px 16px;
+
+    gap: 16px;
+  }
+
+
+  .iconWrapper {
+    width: 46px;
+    height: 46px;
+
+    padding: 10px;
+  }
+
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+
+  .description {
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+  }
+
+
+  .capabilities {
+    gap: 9px;
+
+    font-size: 0.74rem;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .serviceCard,
+  .serviceCard.reversed {
+    padding: 18px 14px;
+  }
+
+
+  .iconWrapper {
+    width: 42px;
+    height: 42px;
+
+    padding: 9px;
+  }
+
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+
+  .description {
+    font-size: 0.76rem;
+  }
+
+
+  .capabilities {
+    font-size: 0.7rem;
+  }
+
 }

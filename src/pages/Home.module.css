@@ -2,78 +2,174 @@
    src/pages/Home.module.css
    ========================================================= */
 
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
 .homePage {
   width: 100%;
+  box-sizing: border-box;
 }
 
 
 /* =========================================================
-   WHY SECTION
+   WHY AV_eSAFE SECTION
    ========================================================= */
 
 .whySection {
-  padding: var(--space-3xl) 0;
-}
+  width: 100%;
 
+  display: flex;
+  flex-direction: column;
 
-.sectionHeading {
-  max-width: 780px;
-  margin: 0 auto var(--space-2xl);
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding-top: 100px;
+
   text-align: center;
 }
 
 
+/* =========================================================
+   WHY SECTION HEADING
+   ========================================================= */
+
+.sectionHeading {
+  width: 100%;
+  max-width: 780px;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   WHY EYEBROW
+   ========================================================= */
+
 .sectionHeading > span {
   display: block;
-  margin-bottom: var(--space-s);
+
+  width: 100%;
+
+  margin: 0 auto var(--space-s);
 
   color: var(--color-accent-primary);
 
   font-family: var(--font-family-mono);
+
   font-size: var(--fs-300);
+
   font-weight: 600;
 
   letter-spacing: 2px;
+
+  text-align: center;
 }
 
+
+/* =========================================================
+   WHY TITLE
+   ========================================================= */
 
 .sectionHeading h2 {
-  margin: 0 0 var(--space-m);
+  width: 100%;
+
+  margin: 0 auto var(--space-m);
 
   font-size: var(--fs-800);
+
   line-height: 1.1;
+
+  text-align: center;
 }
 
+
+/* =========================================================
+   WHY TITLE HIGHLIGHT
+   ========================================================= */
 
 .sectionHeading h2 strong {
   color: var(--color-accent-primary);
 }
 
 
+/* =========================================================
+   WHY DESCRIPTION
+   ========================================================= */
+
 .sectionHeading p {
+  width: 100%;
   max-width: 700px;
+
   margin: 0 auto;
 
   color: var(--color-text-secondary);
 
   font-size: var(--fs-500);
+
   line-height: 1.7;
+
+  text-align: center;
 }
 
+
+/* =========================================================
+   WHY GRID
+   ========================================================= */
 
 .whyGrid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin-top: 50px;
+
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
   gap: var(--space-m);
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  box-sizing: border-box;
 }
 
 
+/* =========================================================
+   WHY CARD
+   ========================================================= */
+
 .whyCard {
-  padding: 30px;
+  width: 100%;
 
   min-height: 230px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
 
   border: 1px solid var(--color-border);
 
@@ -81,11 +177,18 @@
 
   background: var(--color-background-secondary);
 
+  text-align: center;
+  margin-bottom: 100px;
   transition:
     transform 0.3s ease,
     border-color 0.3s ease;
+  
 }
 
+
+/* =========================================================
+   WHY CARD HOVER
+   ========================================================= */
 
 .whyCard:hover {
   transform: translateY(-6px);
@@ -93,6 +196,10 @@
   border-color: rgba(0, 220, 255, 0.35);
 }
 
+
+/* =========================================================
+   WHY ICON
+   ========================================================= */
 
 .whyIcon {
   width: 48px;
@@ -115,19 +222,32 @@
 }
 
 
+/* =========================================================
+   WHY CARD TITLE
+   ========================================================= */
+
 .whyCard h3 {
   margin: 0 0 12px;
 
   font-size: var(--fs-500);
+
+  text-align: center;
 }
 
 
+/* =========================================================
+   WHY CARD DESCRIPTION
+   ========================================================= */
+
 .whyCard p {
-  margin: 0;
+  width: 100%;
 
   color: var(--color-text-secondary);
 
   line-height: 1.7;
+
+  text-align: center;
+
 }
 
 
@@ -136,12 +256,24 @@
    ========================================================= */
 
 .technologySection {
+  width: 100%;
+
   padding: var(--space-3xl) 0;
+
+  box-sizing: border-box;
 }
 
 
+/* =========================================================
+   TECHNOLOGY CONTENT
+   ========================================================= */
+
 .technologyContent {
+  width: 100%;
+
   padding: 55px;
+
+  box-sizing: border-box;
 
   border: 1px solid var(--color-border);
 
@@ -156,11 +288,20 @@
 }
 
 
+/* =========================================================
+   TECHNOLOGY HEADER
+   ========================================================= */
+
 .technologyHeader {
   max-width: 760px;
+
   margin-bottom: 35px;
 }
 
+
+/* =========================================================
+   TECHNOLOGY EYEBROW
+   ========================================================= */
 
 .technologyHeader > span {
   display: block;
@@ -177,6 +318,10 @@
 }
 
 
+/* =========================================================
+   TECHNOLOGY TITLE
+   ========================================================= */
+
 .technologyHeader h2 {
   margin: 0 0 18px;
 
@@ -186,10 +331,18 @@
 }
 
 
+/* =========================================================
+   TECHNOLOGY TITLE HIGHLIGHT
+   ========================================================= */
+
 .technologyHeader h2 strong {
   color: var(--color-accent-primary);
 }
 
+
+/* =========================================================
+   TECHNOLOGY DESCRIPTION
+   ========================================================= */
 
 .technologyHeader p {
   margin: 0;
@@ -202,6 +355,10 @@
 }
 
 
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
 .technologyTags {
   display: flex;
 
@@ -210,6 +367,10 @@
   gap: 12px;
 }
 
+
+/* =========================================================
+   TECHNOLOGY TAG
+   ========================================================= */
 
 .technologyTags span {
   display: inline-flex;
@@ -234,6 +395,10 @@
 }
 
 
+/* =========================================================
+   TECHNOLOGY ICON
+   ========================================================= */
+
 .technologyTags svg {
   color: var(--color-accent-primary);
 }
@@ -247,6 +412,8 @@
   width: 100%;
 
   padding: 90px 0;
+
+  box-sizing: border-box;
 }
 
 
@@ -263,7 +430,8 @@
 
   display: grid;
 
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns:
+    0.85fr 1.15fr;
 
   align-items: center;
 
@@ -515,6 +683,10 @@
 }
 
 
+/* =========================================================
+   ECOSYSTEM EYEBROW
+   ========================================================= */
+
 .ecosystemEyebrow {
   display: block;
 
@@ -534,6 +706,10 @@
 }
 
 
+/* =========================================================
+   ECOSYSTEM TITLE
+   ========================================================= */
+
 .ecosystemContent h2 {
   margin: 0 0 22px;
 
@@ -549,6 +725,10 @@
 }
 
 
+/* =========================================================
+   ECOSYSTEM TITLE HIGHLIGHT
+   ========================================================= */
+
 .ecosystemContent h2 strong {
   display: block;
 
@@ -560,6 +740,10 @@
 }
 
 
+/* =========================================================
+   ECOSYSTEM DESCRIPTION
+   ========================================================= */
+
 .ecosystemContent > p {
   margin: 0 0 18px;
 
@@ -570,6 +754,10 @@
   line-height: 1.75;
 }
 
+
+/* =========================================================
+   ECOSYSTEM DESCRIPTION HIGHLIGHT
+   ========================================================= */
 
 .ecosystemContent > p strong {
   color: var(--color-text-primary);
@@ -630,7 +818,7 @@
 
 
 /* =========================================================
-   ACTIONS
+   ECOSYSTEM ACTIONS
    ========================================================= */
 
 .ecosystemActions {
@@ -739,6 +927,8 @@
   padding: 100px 30px;
 
   text-align: center;
+
+  box-sizing: border-box;
 }
 
 
@@ -746,6 +936,8 @@
   max-width: 800px;
 
   margin: 0 auto;
+
+  text-align: center;
 }
 
 
@@ -802,6 +994,10 @@
   flex-wrap: wrap;
 }
 
+
+/* =========================================================
+   CTA BUTTONS
+   ========================================================= */
 
 .primaryButton,
 .secondaryButton {
@@ -867,12 +1063,14 @@
 @media (max-width: 1050px) {
 
   .whyGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 
   .ecosystemCard {
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns:
+      0.8fr 1.2fr;
 
     gap: 40px;
 
@@ -918,8 +1116,18 @@
 
 @media (max-width: 800px) {
 
+  .whySection {
+    padding-top: 70px;
+  }
+
+
   .whyGrid {
     grid-template-columns: 1fr;
+  }
+
+
+  .sectionHeading {
+    max-width: 700px;
   }
 
 
@@ -956,6 +1164,8 @@
     max-width: 650px;
 
     margin: 0 auto;
+
+    text-align: center;
   }
 
 
@@ -992,7 +1202,11 @@
 
 @media (max-width: 520px) {
 
-  .whySection,
+  .whySection {
+    padding-top: 60px;
+  }
+
+
   .technologySection {
     padding: 60px 0;
   }

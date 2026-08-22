@@ -11,7 +11,7 @@ const ServicesHero = () => {
       transition={{ duration: 1 }}
     >
       <h1 className={styles.headline}>
-        Engineering Solutions That Move Businesses Forward.
+        Engineering Solutions <strong>That Move Businesses Forward.</strong>
       </h1>
       <p className={styles.subtitle}>We combine deep technical expertise with a passion for innovation to deliver technology solutions that solve real-world problems and create lasting value.</p>
     </motion.section>
