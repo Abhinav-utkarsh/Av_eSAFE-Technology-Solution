@@ -310,34 +310,32 @@
 
 /* =========================================================
    HTML
+   IMPORTANT:
+   HTML IS NOT THE SCROLLING ELEMENT
    ========================================================= */
 
 html {
   width: 100%;
 
-  min-height: 100%;
+  height: 100%;
 
   margin: 0;
 
   padding: 0;
 
-  overflow-x: hidden;
-
   /*
-   * Firefox
+   * Prevent the browser viewport itself
+   * from creating the visible scrollbar.
    */
+  overflow: hidden;
+
   scrollbar-width: none;
 
-  /*
-   * Internet Explorer / old Edge
-   */
   -ms-overflow-style: none;
 }
 
 
-/* =========================================================
-   HTML — CHROME / EDGE / SAFARI
-   ========================================================= */
+/* Chrome / Edge / Safari */
 
 html::-webkit-scrollbar {
   display: none !important;
@@ -350,34 +348,42 @@ html::-webkit-scrollbar {
 
 /* =========================================================
    BODY
+   IMPORTANT:
+   BODY IS NOW THE SCROLLING CONTAINER
    ========================================================= */
 
 body {
   width: 100%;
 
-  min-height: 100%;
+  height: 100%;
 
   margin: 0;
 
   padding: 0;
 
+  /*
+   * Horizontal scrolling disabled.
+   */
   overflow-x: hidden;
 
   /*
-   * Firefox
+   * Vertical scrolling remains enabled.
+   */
+  overflow-y: auto;
+
+  /*
+   * Hide scrollbar in Firefox.
    */
   scrollbar-width: none;
 
   /*
-   * Internet Explorer / old Edge
+   * Hide scrollbar in old Edge / IE.
    */
   -ms-overflow-style: none;
 }
 
 
-/* =========================================================
-   BODY — CHROME / EDGE / SAFARI
-   ========================================================= */
+/* Chrome / Edge / Safari */
 
 body::-webkit-scrollbar {
   display: none !important;
@@ -385,6 +391,8 @@ body::-webkit-scrollbar {
   width: 0 !important;
 
   height: 0 !important;
+
+  background: transparent !important;
 }
 
 
@@ -399,7 +407,12 @@ body::-webkit-scrollbar {
 
   min-width: 0;
 
-  min-height: 100vh;
+  /*
+   * Let content determine the page height.
+   */
+  min-height: 100%;
+
+  height: auto;
 
   margin: 0;
 
@@ -410,19 +423,15 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
 
   /*
-   * Firefox
+   * Root itself should NOT become another
+   * scrolling container.
    */
-  scrollbar-width: none;
-
-  /*
-   * Internet Explorer / old Edge
-   */
-  -ms-overflow-style: none;
+  overflow-y: visible;
 }
 
 
 /* =========================================================
-   ROOT — CHROME / EDGE / SAFARI
+   ROOT SCROLLBAR
    ========================================================= */
 
 #root::-webkit-scrollbar {
@@ -433,9 +442,34 @@ body::-webkit-scrollbar {
   height: 0 !important;
 }
 
+#root {
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+}
+
 
 /* =========================================================
-   HIDE SCROLLBARS ON ALL ELEMENTS
+   MAIN
+   ========================================================= */
+
+main {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+
+  overflow-y: visible;
+}
+
+
+/* =========================================================
+   HIDE SCROLLBARS FROM INTERNAL ELEMENTS
    ========================================================= */
 
 * {
@@ -455,23 +489,6 @@ body::-webkit-scrollbar {
 
 
 /* =========================================================
-   MAIN
-   ========================================================= */
-
-main {
-  width: 100%;
-
-  max-width: 100%;
-
-  min-width: 0;
-
-  box-sizing: border-box;
-
-  overflow-x: hidden;
-}
-
-
-/* =========================================================
    MOBILE
    ========================================================= */
 
@@ -480,26 +497,34 @@ main {
   html {
     width: 100%;
 
+    height: 100%;
+
     min-width: 0;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     scrollbar-width: none;
 
     -ms-overflow-style: none;
   }
+
 
   body {
     width: 100%;
 
+    height: 100%;
+
     min-width: 0;
 
     overflow-x: hidden;
+
+    overflow-y: auto;
 
     scrollbar-width: none;
 
     -ms-overflow-style: none;
   }
+
 
   #root {
     width: 100%;
@@ -508,14 +533,15 @@ main {
 
     min-width: 0;
 
-    min-height: 100vh;
+    min-height: 100%;
+
+    height: auto;
 
     overflow-x: hidden;
 
-    scrollbar-width: none;
-
-    -ms-overflow-style: none;
+    overflow-y: visible;
   }
+
 
   main {
     width: 100%;
@@ -525,7 +551,10 @@ main {
     min-width: 0;
 
     overflow-x: hidden;
+
+    overflow-y: visible;
   }
+
 
   html::-webkit-scrollbar,
   body::-webkit-scrollbar,
@@ -546,9 +575,56 @@ main {
 
 @media (max-width: 400px) {
 
-  html,
-  body,
+  html {
+    width: 100%;
+
+    height: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+
+  body {
+    width: 100%;
+
+    height: 100%;
+
+    min-width: 0;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+
   #root {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    min-height: 100%;
+
+    height: auto;
+
+    overflow-x: hidden;
+
+    overflow-y: visible;
+  }
+
+
+  main {
     width: 100%;
 
     max-width: 100%;
@@ -557,18 +633,43 @@ main {
 
     overflow-x: hidden;
 
-    scrollbar-width: none;
-
-    -ms-overflow-style: none;
+    overflow-y: visible;
   }
+
 
   html::-webkit-scrollbar,
   body::-webkit-scrollbar,
-  #root::-webkit-scrollbar {
+  #root::-webkit-scrollbar,
+  main::-webkit-scrollbar {
     display: none !important;
 
     width: 0 !important;
 
     height: 0 !important;
   }
+}
+/* =========================================================
+   FINAL SCROLLBAR FIX
+   ========================================================= */
+
+html {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+body {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
