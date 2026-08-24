@@ -13,6 +13,9 @@ import Contact from './pages/Contact';
 
 import ScrollToTop from './components/common/ScrollToTop';
 
+// Chatbot
+import Chatbot from './components/chatbot/Chatbot';
+
 
 function App() {
   return (
@@ -60,6 +63,9 @@ function App() {
 
       {/* Scroll to top button */}
       <ScrollToTop />
+
+      {/* Av_eSAFE AI Chatbot */}
+      <Chatbot />
 
     </>
   );
