@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 
 import { motion } from 'framer-motion';
+
 import {
   ArrowRight,
   BrainCircuit,
@@ -32,18 +33,21 @@ const whyAvESafe = [
     description:
       'We explore practical applications of AI and Generative AI to create smarter digital experiences and engineering workflows.',
   },
+
   {
     icon: <Workflow size={24} />,
     title: 'Automation',
     description:
       'We transform repetitive processes into connected, intelligent workflows that improve efficiency and consistency.',
   },
+
   {
     icon: <ShieldCheck size={24} />,
     title: 'Quality Engineering',
     description:
       'Quality is engineered into the lifecycle through automation, validation, testing, and reliable engineering practices.',
   },
+
   {
     icon: <Code2 size={24} />,
     title: 'Software Engineering',
@@ -89,7 +93,6 @@ const Home = () => {
           TRUST STRIP
           ===================================================== */}
 
-
       <PageContainer>
 
         {/* ===================================================
@@ -107,7 +110,9 @@ const Home = () => {
 
           <div className={styles.sectionHeading}>
 
-            <span>WHY AV_eSAFE</span>
+            <span>
+              WHY AV_eSAFE
+            </span>
 
             <h2>
               Engineering with
@@ -214,8 +219,11 @@ const Home = () => {
               {technologyAreas.map((technology) => (
 
                 <span key={technology}>
+
                   <Sparkles size={14} />
+
                   {technology}
+
                 </span>
 
               ))}
@@ -295,6 +303,7 @@ const Home = () => {
 
               <h2>
                 One ecosystem.
+
                 <strong>
                   Multiple possibilities.
                 </strong>
@@ -319,8 +328,6 @@ const Home = () => {
               {/* =================================================
                   HIGHLIGHTS
                   ================================================= */}
-
-             
 
 
               {/* =================================================
@@ -359,12 +366,26 @@ const Home = () => {
             FINAL CTA
             =================================================== */}
 
-        <section className={styles.homeCta}>
+        <section
+          className={styles.homeCta}
+          style={{
+            position: 'relative',
+            zIndex: 50,
+            pointerEvents: 'auto',
+          }}
+        >
 
-          <div className={styles.ctaContent}>
+          <div
+            className={styles.ctaContent}
+            style={{
+              position: 'relative',
+              zIndex: 51,
+              pointerEvents: 'auto',
+            }}
+          >
 
             <span>
-              ENGINEERING WHAT&apos;S NEXT
+              Let’s Turn Your Ideas Into Impact.
             </span>
 
             <h2>
@@ -380,23 +401,51 @@ const Home = () => {
             </p>
 
 
-            <div className={styles.ctaActions}>
+            {/* =================================================
+                CTA BUTTONS
+                CLICK LAYER FIX
+                ================================================= */}
+
+            <div
+              className={styles.ctaActions}
+              style={{
+                position: 'relative',
+                zIndex: 100,
+                pointerEvents: 'auto',
+              }}
+            >
 
               <NavLink
                 to="/contact"
                 className={styles.primaryButton}
+                style={{
+                  position: 'relative',
+                  zIndex: 101,
+                  pointerEvents: 'auto',
+                  cursor: 'pointer',
+                }}
               >
-                Start a Conversation
+                Have an Idea? Let’s Build It
+
                 <ArrowRight size={18} />
+
               </NavLink>
 
 
               <NavLink
                 to="/products"
                 className={styles.secondaryButton}
+                style={{
+                  position: 'relative',
+                  zIndex: 101,
+                  pointerEvents: 'auto',
+                  cursor: 'pointer',
+                }}
               >
                 Explore Products
+
                 <ArrowRight size={18} />
+
               </NavLink>
 
             </div>

@@ -467,18 +467,7 @@ const Products = () => {
 
             {/* Working Contact Link */}
 
-            <a
-              href="/contact"
-              className={styles.ctaButton}
-
-              aria-label="Start a conversation with Av_eSAFE"
-            >
-
-              Start a Conversation
-
-              <ArrowRight size={18} />
-
-            </a>
+            
 
           </div>
 

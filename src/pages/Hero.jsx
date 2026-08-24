@@ -189,6 +189,27 @@ const Hero = () => {
           </Link>
 
         </motion.div>
+        
+         {/* EYEBROW */}
+        <motion.div
+          className={styles.eyebrow}
+          initial={{
+            opacity: 0,
+            y: 20,
+            marginTop: '30px',
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: 'easeInOut',
+            delay: 0.6,
+          }}
+        >
+          Turning Concepts into Clicks
+        </motion.div>
 
       </div>
 

@@ -869,3 +869,305 @@ body.dark .chatbot-window {
   }
 
 }
+/* =========================================================
+   CHATBOT FLOATING CONTAINER
+   ========================================================= */
+
+.chatbot-floating-container {
+  position: fixed !important;
+
+  right: 26px !important;
+  bottom: 26px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+
+  gap: 12px !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  z-index: 999999 !important;
+
+  pointer-events: none !important;
+}
+
+
+/* =========================================================
+   GREETING BUBBLE
+   ========================================================= */
+
+.chatbot-floating-container .chatbot-greeting {
+  position: relative !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 7px !important;
+
+  min-height: 40px !important;
+
+  padding: 9px 14px !important;
+
+  margin: 0 !important;
+
+  border: 1px solid rgba(0, 245, 255, 0.45) !important;
+
+  border-radius: 14px !important;
+
+  background:
+    rgba(15, 23, 42, 0.94) !important;
+
+  color: #ffffff !important;
+
+  font-family: inherit !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1.3 !important;
+
+  white-space: nowrap !important;
+
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  pointer-events: auto !important;
+
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(0, 245, 255, 0.10) !important;
+
+  animation:
+    chatbotGreetingIn 0.5s ease-out !important;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+
+/* =========================================================
+   GREETING POINTER
+   ========================================================= */
+
+.chatbot-floating-container .chatbot-greeting::after {
+  content: "" !important;
+
+  position: absolute !important;
+
+  right: -6px !important;
+  bottom: 10px !important;
+
+  width: 10px !important;
+  height: 10px !important;
+
+  background:
+    rgba(15, 23, 42, 0.94) !important;
+
+  border-right:
+    1px solid
+    rgba(0, 245, 255, 0.45) !important;
+
+  border-top:
+    1px solid
+    rgba(0, 245, 255, 0.45) !important;
+
+  transform: rotate(45deg) !important;
+}
+
+
+/* =========================================================
+   GREETING HOVER
+   ========================================================= */
+
+.chatbot-floating-container .chatbot-greeting:hover {
+  transform: translateY(-2px) !important;
+
+  border-color:
+    rgba(0, 245, 255, 0.75) !important;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.40),
+    0 0 25px rgba(0, 245, 255, 0.15) !important;
+}
+
+
+/* =========================================================
+   WAVE
+   ========================================================= */
+
+.greeting-wave {
+  display: inline-block !important;
+
+  font-size: 14px !important;
+
+  animation:
+    greetingWave 1.8s ease-in-out infinite !important;
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.greeting-arrow {
+  display: inline-block !important;
+
+  font-size: 14px !important;
+
+  color:
+    var(--color-primary, #6366f1) !important;
+
+  transition:
+    transform 0.2s ease !important;
+}
+
+
+.chatbot-greeting:hover .greeting-arrow {
+  transform: translateX(3px) !important;
+}
+
+
+/* =========================================================
+   GREETING ENTRY
+   ========================================================= */
+
+@keyframes chatbotGreetingIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(15px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   WAVE ANIMATION
+   ========================================================= */
+
+@keyframes greetingWave {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(12deg);
+  }
+
+  40% {
+    transform: rotate(-8deg);
+  }
+
+  60% {
+    transform: rotate(8deg);
+  }
+
+  80% {
+    transform: rotate(0deg);
+  }
+
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   Keep chatbot button inside the container
+   ========================================================= */
+
+.chatbot-floating-container .chatbot-fab {
+  position: relative !important;
+
+  right: auto !important;
+  bottom: auto !important;
+
+  flex-shrink: 0 !important;
+
+  margin: 0 !important;
+
+  pointer-events: auto !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .chatbot-floating-container {
+    right: 16px !important;
+    bottom: 16px !important;
+
+    gap: 8px !important;
+  }
+
+
+  .chatbot-floating-container .chatbot-greeting {
+    min-height: 36px !important;
+
+    padding:
+      8px 11px !important;
+
+    font-size: 11px !important;
+
+    border-radius: 12px !important;
+  }
+
+
+  .greeting-wave {
+    font-size: 13px !important;
+  }
+
+
+  .greeting-arrow {
+    font-size: 13px !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .chatbot-floating-container {
+    right: 14px !important;
+    bottom: 16px !important;
+  }
+
+
+  .chatbot-floating-container .chatbot-greeting {
+    max-width: 175px !important;
+
+    white-space: normal !important;
+
+    line-height: 1.3 !important;
+  }
+
+}

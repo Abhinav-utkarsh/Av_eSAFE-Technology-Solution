@@ -531,18 +531,6 @@ const About = () => {
 
               </a>
 
-
-              <a
-                href="/contact"
-                className={styles.primaryButton}
-              >
-
-                Start a Conversation
-
-                <ArrowRight size={18} />
-
-              </a>
-
             </div>
 
           </div>

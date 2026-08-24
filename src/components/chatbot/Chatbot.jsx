@@ -6,6 +6,8 @@ const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
 
+  const [showGreeting, setShowGreeting] = useState(true);
+
   const [loadingText, setLoadingText] = useState('Thinking');
 
   const [messages, setMessages] = useState([
@@ -14,6 +16,20 @@ const Chatbot = () => {
       content: "Hi! 👋 I'm Av_eSAFE AI. How can I help you today?",
     },
   ]);
+
+  /* =========================================
+     Floating Greeting
+     Automatically hides after 7 seconds
+     ========================================= */
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowGreeting(false);
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
 
   /* =========================================
      Rotating AI Loading Messages
@@ -49,6 +65,16 @@ const Chatbot = () => {
 
 
   /* =========================================
+     Open Chatbot
+     ========================================= */
+
+  const openChatbot = () => {
+    setShowGreeting(false);
+    setIsOpen(true);
+  };
+
+
+  /* =========================================
      Send Message
      ========================================= */
 
@@ -56,8 +82,6 @@ const Chatbot = () => {
     if (!message.trim()) return;
 
     const userMessage = message.trim();
-
-    /* Add user message */
 
     setMessages((prev) => [
       ...prev,
@@ -68,8 +92,6 @@ const Chatbot = () => {
     ]);
 
     setMessage('');
-
-    /* Add loading message */
 
     setLoadingText('Thinking');
 
@@ -97,8 +119,6 @@ const Chatbot = () => {
 
       const data = await response.json();
 
-      /* Replace loading message with AI response */
-
       setMessages((prev) => [
         ...prev.slice(0, -1),
         {
@@ -113,8 +133,6 @@ const Chatbot = () => {
     } catch (error) {
 
       console.error('Chat error:', error);
-
-      /* Replace loading message with error */
 
       setMessages((prev) => [
         ...prev.slice(0, -1),
@@ -144,28 +162,58 @@ const Chatbot = () => {
   return (
     <>
       {/* =========================================
-          Floating Chat Button
+          Floating Chat Button + Greeting
           ========================================= */}
 
       {!isOpen && (
-        <button
-          type="button"
-          className="chatbot-fab"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open Av_eSAFE AI"
-        >
+        <div className="chatbot-floating-container">
 
-          <span className="chatbot-orbit-icon">
+          {/* Greeting */}
 
-            <span className="orbit-core"></span>
+          {showGreeting && (
+            <button
+              type="button"
+              className="chatbot-greeting"
+              onClick={openChatbot}
+              aria-label="Open Av_eSAFE AI"
+            >
+              <span className="greeting-wave">
+                Hi!👋
+              </span>
 
-            <span className="orbit-ring orbit-ring-1"></span>
+              <span>
+                Ask me about Av_eSAFE
+              </span>
 
-            <span className="orbit-ring orbit-ring-2"></span>
+              <span className="greeting-arrow">
+                →
+              </span>
+            </button>
+          )}
 
-          </span>
 
-        </button>
+          {/* Floating AI Button */}
+
+          <button
+            type="button"
+            className="chatbot-fab"
+            onClick={openChatbot}
+            aria-label="Open Av_eSAFE AI"
+          >
+
+            <span className="chatbot-orbit-icon">
+
+              <span className="orbit-core"></span>
+
+              <span className="orbit-ring orbit-ring-1"></span>
+
+              <span className="orbit-ring orbit-ring-2"></span>
+
+            </span>
+
+          </button>
+
+        </div>
       )}
 
 
@@ -176,17 +224,13 @@ const Chatbot = () => {
       {isOpen && (
         <div className="chatbot-window">
 
-          {/* =========================================
-              Header
-              ========================================= */}
+          {/* Header */}
 
           <div className="chatbot-header">
 
             <div className="chatbot-header-info">
 
               <div className="chatbot-title">
-
-                {/* AI Assistant Icon */}
 
                 <span className="chatbot-mini-icon">
 
@@ -218,8 +262,6 @@ const Chatbot = () => {
 
             </div>
 
-
-            {/* Close */}
 
             <button
               type="button"

@@ -24,10 +24,7 @@ const Footer = () => {
                 BUILD WHAT'S NEXT
               </span>
 
-              <h2>
-                Have an idea worth
-                <span> engineering?</span>
-              </h2>
+              
 
               <p>
                 From software engineering and quality engineering
@@ -35,14 +32,6 @@ const Footer = () => {
                 turn your idea into something practical and scalable.
               </p>
             </div>
-
-            <NavLink
-              to="/contact"
-              className={styles.ctaButton}
-            >
-              Start a Conversation
-              <span className={styles.arrow}>→</span>
-            </NavLink>
 
           </div>
 
@@ -231,7 +220,7 @@ const Footer = () => {
             <ul>
 
               <li>
-                <a href="mailto:contact@avesafe.com">
+                <a href="mailto:avesafe.solutions@gmail.com">
                   Email Us
                 </a>
               </li>

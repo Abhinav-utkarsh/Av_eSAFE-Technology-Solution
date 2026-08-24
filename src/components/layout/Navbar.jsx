@@ -182,7 +182,7 @@ const Navbar = () => {
           >
 
             <Button className={styles.desktopCta}>
-              Let's Talk
+              Contact Us ➜
             </Button>
 
           </NavLink>

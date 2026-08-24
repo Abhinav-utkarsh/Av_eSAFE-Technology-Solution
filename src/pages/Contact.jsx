@@ -124,7 +124,7 @@ const Contact = () => {
 
             <div className={styles.heroEyebrow}>
               <Sparkles size={15} />
-              LET'S BUILD WHAT'S NEXT
+              Let’s Create Something Intelligent
             </div>
 
             <h1>
@@ -447,7 +447,7 @@ const Contact = () => {
               {/* Email */}
 
               <a
-                href="mailto:connect@avesafe.com"
+                href="mailto:avesafe.solutions@gmail.com"
                 className={styles.infoItem}
               >
 
@@ -458,7 +458,7 @@ const Contact = () => {
                 <div>
                   <span>Email</span>
                   <strong>
-                    connect@avesafe.com
+                    avesafe.solutions@gmail.com
                   </strong>
                 </div>
 
