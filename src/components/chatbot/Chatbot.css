@@ -10,11 +10,12 @@
 
 .chatbot-fab {
   position: fixed !important;
-  right: 28px !important;
-  bottom: 28px !important;
 
-  width: 62px !important;
-  height: 62px !important;
+  right: 26px !important;
+  bottom: 26px !important;
+
+  width: 54px !important;
+  height: 54px !important;
 
   display: flex !important;
   align-items: center !important;
@@ -33,18 +34,19 @@
   z-index: 999999 !important;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.25) !important;
+    0 7px 20px rgba(0, 0, 0, 0.23) !important;
 
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease !important;
 }
 
+
 .chatbot-fab:hover {
   transform: scale(1.07);
 
   box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.3) !important;
+    0 11px 28px rgba(0, 0, 0, 0.3) !important;
 }
 
 
@@ -55,8 +57,8 @@
 .chatbot-orbit-icon {
   position: relative;
 
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
 
   display: flex;
   align-items: center;
@@ -65,11 +67,12 @@
   pointer-events: none;
 }
 
+
 .orbit-core {
   position: relative;
 
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
 
   border-radius: 50%;
 
@@ -78,14 +81,18 @@
   z-index: 3;
 
   box-shadow:
-    0 0 8px rgba(255, 255, 255, 0.9);
+    0 0 7px rgba(255, 255, 255, 0.9);
+
+  transition:
+    transform 0.25s ease;
 }
+
 
 .orbit-ring {
   position: absolute;
 
-  width: 25px;
-  height: 11px;
+  width: 22px;
+  height: 10px;
 
   border: 1.5px solid #ffffff !important;
 
@@ -93,24 +100,30 @@
 
   z-index: 2;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
+
 
 .orbit-ring-1 {
   transform: rotate(45deg);
 }
 
+
 .orbit-ring-2 {
   transform: rotate(-45deg);
 }
+
 
 .chatbot-fab:hover .orbit-ring-1 {
   transform: rotate(65deg);
 }
 
+
 .chatbot-fab:hover .orbit-ring-2 {
   transform: rotate(-65deg);
 }
+
 
 .chatbot-fab:hover .orbit-core {
   transform: scale(1.15);
@@ -167,14 +180,6 @@
 /* =========================================================
    DARK CHATBOT THEME
    ========================================================= */
-
-/*
-   These selectors cover the most common theme
-   implementations.
-
-   If your website uses one of these, the chatbot
-   automatically switches to the dark version.
-*/
 
 .dark .chatbot-window,
 .dark-theme .chatbot-window,
@@ -301,8 +306,8 @@ body.dark .chatbot-window {
 
   position: relative;
 
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 
   display: flex;
   align-items: center;
@@ -310,25 +315,30 @@ body.dark .chatbot-window {
 
   margin-right: 8px;
 
-  border-radius: 50%;
+  border-radius: 9px;
 
   background:
     var(--color-primary, #6366f1);
 
+  color: #ffffff;
+
+  flex-shrink: 0;
+
   box-shadow:
-    0 0 14px
-    rgba(99, 102, 241, 0.25);
+    0 3px 10px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 
-.mini-core {
+.chatbot-title:hover .chatbot-mini-icon {
 
-  width: 7px;
-  height: 7px;
+  transform: scale(1.06);
 
-  border-radius: 50%;
-
-  background: #ffffff;
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 
@@ -348,13 +358,17 @@ body.dark .chatbot-window {
   color: rgba(255, 255, 255, 0.62) !important;
 }
 
+
 .chatbot-dev {
 
   display: flex;
   align-items: center;
+
   font-size: 8px;
+
   color: rgba(255, 255, 255, 0.62) !important;
 }
+
 
 .chatbot-status::before {
 
@@ -451,9 +465,11 @@ body.dark .chatbot-window {
   width: 5px;
 }
 
+
 .chatbot-messages::-webkit-scrollbar-track {
   background: transparent;
 }
+
 
 .chatbot-messages::-webkit-scrollbar-thumb {
 
@@ -701,8 +717,8 @@ body.dark .chatbot-window {
     right: 16px !important;
     bottom: 16px !important;
 
-    width: 58px !important;
-    height: 58px !important;
+    width: 52px !important;
+    height: 52px !important;
   }
 
 
@@ -732,6 +748,10 @@ body.dark .chatbot-window {
 
 }
 
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 380px) {
 
