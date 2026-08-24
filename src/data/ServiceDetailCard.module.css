@@ -58,13 +58,22 @@
 
   color: var(--color-accent-primary);
 
-  background: rgba(0, 245, 255, 0.1);
+  /*
+   * Theme-aware background.
+   * Uses the same glass surface in both themes.
+   */
+  background: var(--color-glass-bg);
 
   padding: var(--space-m);
 
   border-radius: var(--border-radius-medium);
 
   border: 1px solid var(--color-border);
+
+  transition:
+    background var(--transition-smooth),
+    border-color var(--transition-smooth),
+    color var(--transition-smooth);
 }
 
 

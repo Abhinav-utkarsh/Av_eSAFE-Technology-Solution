@@ -23,14 +23,27 @@ function NeuralNetwork() {
 
 
   /* =========================================================
+     THEME COLORS
+     ========================================================= */
+
+  const darkLineColor = '#00e5ff';
+  const darkNodeColor = '#00e5ff';
+
+  const lightLineColor = '#008c9e';
+  const lightNodeColor = '#007f91';
+
+
+  /* =========================================================
      CREATE NETWORK
      ========================================================= */
 
   const network = useMemo(() => {
 
-    const positions = new Float32Array(NODE_COUNT * 3);
+    const positions =
+      new Float32Array(NODE_COUNT * 3);
 
-    const velocities = new Float32Array(NODE_COUNT * 3);
+    const velocities =
+      new Float32Array(NODE_COUNT * 3);
 
     const linePositions =
       new Float32Array(MAX_CONNECTIONS * 6);
@@ -39,26 +52,49 @@ function NeuralNetwork() {
     for (let i = 0; i < NODE_COUNT; i++) {
 
       /*
-       * Keep the center relatively open for the Hero text.
+       * Keep the center relatively open
+       * for the Hero text.
        */
 
       let x;
 
       if (Math.random() > 0.5) {
-        x = THREE.MathUtils.randFloat(2.2, 7.5);
+
+        x =
+          THREE.MathUtils.randFloat(
+            2.2,
+            7.5
+          );
+
       } else {
-        x = THREE.MathUtils.randFloat(-7.5, -2.2);
+
+        x =
+          THREE.MathUtils.randFloat(
+            -7.5,
+            -2.2
+          );
+
       }
 
+
       const y =
-        THREE.MathUtils.randFloat(-4.5, 4.5);
+        THREE.MathUtils.randFloat(
+          -4.5,
+          4.5
+        );
+
 
       const z =
-        THREE.MathUtils.randFloat(-2.5, 2.5);
+        THREE.MathUtils.randFloat(
+          -2.5,
+          2.5
+        );
 
 
       positions[i * 3] = x;
+
       positions[i * 3 + 1] = y;
+
       positions[i * 3 + 2] = z;
 
 
@@ -67,13 +103,23 @@ function NeuralNetwork() {
        */
 
       velocities[i * 3] =
-        THREE.MathUtils.randFloat(-0.12, 0.12);
+        THREE.MathUtils.randFloat(
+          -0.12,
+          0.12
+        );
 
       velocities[i * 3 + 1] =
-        THREE.MathUtils.randFloat(-0.10, 0.10);
+        THREE.MathUtils.randFloat(
+          -0.10,
+          0.10
+        );
 
       velocities[i * 3 + 2] =
-        THREE.MathUtils.randFloat(-0.06, 0.06);
+        THREE.MathUtils.randFloat(
+          -0.06,
+          0.06
+        );
+
     }
 
 
@@ -92,7 +138,67 @@ function NeuralNetwork() {
 
   useFrame((state, delta) => {
 
-    const time = state.clock.elapsedTime;
+    const time =
+      state.clock.elapsedTime;
+
+
+    /* =======================================================
+       THEME DETECTION
+       ======================================================= */
+
+    const isLightTheme =
+      document.documentElement
+        .getAttribute('data-theme') === 'light';
+
+
+    /* =======================================================
+       UPDATE COLORS
+       ======================================================= */
+
+    if (linesRef.current) {
+
+      const material =
+        linesRef.current.material;
+
+      material.color.set(
+        isLightTheme
+          ? lightLineColor
+          : darkLineColor
+      );
+
+      /*
+       * Dark mode:
+       * subtle cyan glow.
+       *
+       * Light mode:
+       * darker and more visible.
+       */
+
+      material.opacity =
+        isLightTheme
+          ? 0.20
+          : 0.10;
+
+    }
+
+
+    if (nodesRef.current) {
+
+      const material =
+        nodesRef.current.material;
+
+      material.color.set(
+        isLightTheme
+          ? lightNodeColor
+          : darkNodeColor
+      );
+
+      material.opacity =
+        isLightTheme
+          ? 0.42
+          : 0.20;
+
+    }
 
 
     /* =======================================================
@@ -102,19 +208,28 @@ function NeuralNetwork() {
     if (nodesRef.current) {
 
       const position =
-        nodesRef.current.geometry.attributes.position;
+        nodesRef.current
+          .geometry
+          .attributes
+          .position;
 
-      const array = position.array;
+      const array =
+        position.array;
 
 
-      for (let i = 0; i < NODE_COUNT; i++) {
+      for (
+        let i = 0;
+        i < NODE_COUNT;
+        i++
+      ) {
 
-        const index = i * 3;
+        const index =
+          i * 3;
 
 
-        /*
-         * Faster floating movement
-         */
+        /* ---------------------------------------------------
+           Faster floating movement
+           --------------------------------------------------- */
 
         array[index] +=
           network.velocities[index] *
@@ -132,9 +247,9 @@ function NeuralNetwork() {
           1.8;
 
 
-        /*
-         * Organic wave movement
-         */
+        /* ---------------------------------------------------
+           Organic wave movement
+           --------------------------------------------------- */
 
         array[index] +=
           Math.sin(
@@ -151,9 +266,9 @@ function NeuralNetwork() {
           0.10;
 
 
-        /*
-         * Keep nodes inside boundaries
-         */
+        /* ---------------------------------------------------
+           Keep nodes inside boundaries
+           --------------------------------------------------- */
 
         if (array[index] > 7.5)
           array[index] = 2.2;
@@ -161,21 +276,25 @@ function NeuralNetwork() {
         if (array[index] < -7.5)
           array[index] = -2.2;
 
+
         if (array[index + 1] > 4.5)
           array[index + 1] = -4.5;
 
         if (array[index + 1] < -4.5)
           array[index + 1] = 4.5;
 
+
         if (array[index + 2] > 2.5)
           array[index + 2] = -2.5;
 
         if (array[index + 2] < -2.5)
           array[index + 2] = 2.5;
+
       }
 
 
       position.needsUpdate = true;
+
     }
 
 
@@ -189,23 +308,27 @@ function NeuralNetwork() {
     ) {
 
       const nodeArray =
-        nodesRef.current.geometry
-          .attributes.position.array;
+        nodesRef.current
+          .geometry
+          .attributes
+          .position
+          .array;
+
 
       const lineArray =
-        linesRef.current.geometry
-          .attributes.position.array;
+        linesRef.current
+          .geometry
+          .attributes
+          .position
+          .array;
 
 
       let connectionIndex = 0;
 
 
-      /*
-       * Find nearby nodes every frame.
-       *
-       * Because nodes move, the connections also
-       * continuously change.
-       */
+      /* ---------------------------------------------------
+         Find nearby nodes
+         --------------------------------------------------- */
 
       for (
         let i = 0;
@@ -255,9 +378,14 @@ function NeuralNetwork() {
             nodeArray[j * 3 + 2];
 
 
-          const dx = ax - bx;
-          const dy = ay - by;
-          const dz = az - bz;
+          const dx =
+            ax - bx;
+
+          const dy =
+            ay - by;
+
+          const dz =
+            az - bz;
 
 
           const distance =
@@ -277,24 +405,38 @@ function NeuralNetwork() {
               connectionIndex * 6;
 
 
-            lineArray[lineIndex] = ax;
-            lineArray[lineIndex + 1] = ay;
-            lineArray[lineIndex + 2] = az;
+            lineArray[lineIndex] =
+              ax;
 
-            lineArray[lineIndex + 3] = bx;
-            lineArray[lineIndex + 4] = by;
-            lineArray[lineIndex + 5] = bz;
+            lineArray[lineIndex + 1] =
+              ay;
+
+            lineArray[lineIndex + 2] =
+              az;
+
+
+            lineArray[lineIndex + 3] =
+              bx;
+
+            lineArray[lineIndex + 4] =
+              by;
+
+            lineArray[lineIndex + 5] =
+              bz;
 
 
             connectionIndex++;
+
           }
+
         }
+
       }
 
 
-      /*
-       * Hide unused connections
-       */
+      /* ---------------------------------------------------
+         Hide unused connections
+         --------------------------------------------------- */
 
       for (
         let i = connectionIndex;
@@ -302,21 +444,32 @@ function NeuralNetwork() {
         i++
       ) {
 
-        const index = i * 6;
+        const index =
+          i * 6;
+
 
         lineArray[index] = 0;
+
         lineArray[index + 1] = 0;
+
         lineArray[index + 2] = -100;
 
+
         lineArray[index + 3] = 0;
+
         lineArray[index + 4] = 0;
+
         lineArray[index + 5] = -100;
+
       }
 
 
-      linesRef.current.geometry
-        .attributes.position
+      linesRef.current
+        .geometry
+        .attributes
+        .position
         .needsUpdate = true;
+
     }
 
 
@@ -333,6 +486,7 @@ function NeuralNetwork() {
           0.045
         );
 
+
       groupRef.current.rotation.x =
         THREE.MathUtils.lerp(
           groupRef.current.rotation.x,
@@ -341,19 +495,29 @@ function NeuralNetwork() {
         );
 
 
-      /*
-       * Faster overall drift
-       */
+      /* ---------------------------------------------------
+         Overall drift
+         --------------------------------------------------- */
 
       groupRef.current.position.x =
-        Math.sin(time * 0.35) * 0.12;
+        Math.sin(
+          time * 0.35
+        ) * 0.12;
+
 
       groupRef.current.position.y =
-        Math.cos(time * 0.30) * 0.08;
+        Math.cos(
+          time * 0.30
+        ) * 0.08;
+
     }
 
   });
 
+
+  /* =========================================================
+     RENDER
+     ========================================================= */
 
   return (
 
@@ -377,10 +541,11 @@ function NeuralNetwork() {
 
         </bufferGeometry>
 
+
         <lineBasicMaterial
-          color="#00e5ff"
+          color={darkLineColor}
           transparent
-          opacity={0.1}
+          opacity={0.10}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
@@ -405,12 +570,13 @@ function NeuralNetwork() {
 
         </bufferGeometry>
 
+
         <pointsMaterial
-          color="#00e5ff"
+          color={darkNodeColor}
           size={0.065}
           sizeAttenuation
           transparent
-          opacity={0.2}
+          opacity={0.20}
           depthWrite={false}
           blending={THREE.AdditiveBlending}
         />
@@ -418,7 +584,9 @@ function NeuralNetwork() {
       </points>
 
     </group>
+
   );
+
 }
 
 
@@ -449,4 +617,5 @@ export default function HeroScene() {
     </Canvas>
 
   );
+
 }

@@ -32,10 +32,15 @@
 }
 
 
+/* =========================================================
+   SCROLLED HEADER
+   ========================================================= */
+
 .header.scrolled {
   background: var(--color-glass-bg);
 
   backdrop-filter: blur(14px);
+
   -webkit-backdrop-filter: blur(14px);
 
   border-bottom: 1px solid var(--color-border);
@@ -91,7 +96,7 @@
 
   padding: 8px 62px 8px 14px;
 
-  border: 1px solid rgba(0, 220, 255, 0.35);
+  border: 1px solid var(--color-border);
 
   border-radius: 5px;
 
@@ -115,7 +120,7 @@
 
 
 .logo:hover {
-  border-color: rgba(0, 220, 255, 0.7);
+  border-color: var(--color-accent-primary);
 
   background:
     linear-gradient(
@@ -245,7 +250,7 @@
 
   transform: translateY(-50%);
 
-  border: 1px solid rgba(0, 220, 255, 0.28);
+  border: 1px solid var(--color-border);
 
   border-radius: 50%;
 
@@ -273,7 +278,7 @@
     translateY(-50%)
     rotate(15deg);
 
-  border-color: rgba(0, 220, 255, 0.7);
+  border-color: var(--color-accent-primary);
 
   box-shadow:
     0 0 22px rgba(0, 220, 255, 0.18);
@@ -452,6 +457,89 @@
 
 
 /* =========================================================
+   DARK / LIGHT THEME TOGGLE
+   ========================================================= */
+
+.themeToggle {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.themeToggle button {
+  width: 42px !important;
+
+  height: 42px !important;
+
+  min-width: 42px !important;
+
+  min-height: 42px !important;
+
+  padding: 0 !important;
+
+  margin: 0 !important;
+
+  border: 1px solid var(--color-border) !important;
+
+  border-radius: 50% !important;
+
+  background: var(--color-glass-bg) !important;
+
+  color: var(--color-accent-primary) !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  cursor: pointer;
+
+  outline: none;
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 250ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease,
+    color 300ms ease,
+    box-shadow 300ms ease !important;
+}
+
+
+.themeToggle button:hover {
+  transform:
+    rotate(12deg)
+    scale(1.08);
+
+  border-color:
+    var(--color-accent-primary) !important;
+
+  color:
+    var(--color-accent-primary) !important;
+
+  box-shadow:
+    0 0 18px
+    rgba(0, 245, 255, 0.18);
+}
+
+
+.themeToggle button:active {
+  transform:
+    rotate(0deg)
+    scale(0.94);
+}
+
+
+/* =========================================================
    LARGE TABLET
    ========================================================= */
 
@@ -603,6 +691,17 @@
     display: flex;
   }
 
+
+  .themeToggle button {
+    width: 38px !important;
+
+    height: 38px !important;
+
+    min-width: 38px !important;
+
+    min-height: 38px !important;
+  }
+
 }
 
 
@@ -680,6 +779,11 @@
     height: 38px;
   }
 
+
+  .themeToggle {
+    margin-right: 2px;
+  }
+
 }
 
 
@@ -730,6 +834,17 @@
     width: 22px;
 
     height: 22px;
+  }
+
+
+  .themeToggle button {
+    width: 36px !important;
+
+    height: 36px !important;
+
+    min-width: 36px !important;
+
+    min-height: 36px !important;
   }
 
 }

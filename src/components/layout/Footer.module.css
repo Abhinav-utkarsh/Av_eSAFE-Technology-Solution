@@ -13,6 +13,10 @@
   padding-top: var(--space-xxl);
 
   border-top: 1px solid var(--color-border);
+
+  transition:
+    background-color var(--transition-smooth),
+    border-color var(--transition-smooth);
 }
 
 
@@ -55,16 +59,23 @@
 
   padding: 40px;
 
-  border: 1px solid rgba(0, 220, 255, 0.14);
+  border: 1px solid var(--color-border);
 
   border-radius: 18px;
 
+  /*
+   * Theme-aware subtle accent background.
+   */
   background:
     linear-gradient(
       135deg,
       rgba(0, 220, 255, 0.045),
       rgba(0, 220, 255, 0.01)
     );
+
+  transition:
+    background var(--transition-smooth),
+    border-color var(--transition-smooth);
 }
 
 
@@ -153,6 +164,7 @@
 
   transition:
     background 0.25s ease,
+    color 0.25s ease,
     box-shadow 0.25s ease,
     transform 0.25s ease;
 }
@@ -251,7 +263,8 @@
   text-decoration: none;
 
   transition:
-    transform 0.25s ease;
+    transform 0.25s ease,
+    color 0.25s ease;
 }
 
 
@@ -279,7 +292,7 @@
 
   color: var(--color-accent-primary);
 
-  border: 1px solid rgba(0, 220, 255, 0.28);
+  border: 1px solid var(--color-border);
 
   border-radius: 50%;
 
@@ -296,7 +309,8 @@
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 

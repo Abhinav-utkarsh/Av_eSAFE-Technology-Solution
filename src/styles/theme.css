@@ -1,0 +1,162 @@
+/* =========================================================
+   AV_eSAFE THEME.CSS
+   IMPORTANT:
+   This file must NOT modify Three.js / R3F canvas layout.
+   ========================================================= */
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+:root {
+  --theme-background: #0A0A1A;
+  --theme-background-secondary: #1A1A2E;
+
+  --theme-surface: rgba(26, 26, 46, 0.60);
+
+  --theme-text-primary: #E0E0E0;
+  --theme-text-secondary: #A0A0B0;
+
+  --theme-accent: #00F5FF;
+  --theme-accent-secondary: #7E57C2;
+
+  --theme-border: rgba(0, 245, 255, 0.20);
+
+  --theme-shadow: rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+:root[data-theme="light"] {
+  --theme-background: #F7FAFC;
+  --theme-background-secondary: #FFFFFF;
+
+  --theme-surface: rgba(255, 255, 255, 0.78);
+
+  --theme-text-primary: #101828;
+  --theme-text-secondary: #475467;
+
+  --theme-accent: #0097A7;
+  --theme-accent-secondary: #6D4CC2;
+
+  --theme-border: rgba(0, 151, 167, 0.20);
+
+  --theme-shadow: rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND ONLY
+   ========================================================= */
+
+html {
+  background-color: var(--theme-background);
+}
+
+
+body {
+  background-color: var(--theme-background);
+  color: var(--theme-text-primary);
+
+  transition:
+    background-color 350ms ease,
+    color 350ms ease;
+}
+
+
+/* =========================================================
+   ROOT BACKGROUND
+   ========================================================= */
+
+#root {
+  background-color: var(--theme-background);
+  color: var(--theme-text-primary);
+
+  transition:
+    background-color 350ms ease,
+    color 350ms ease;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--theme-text-primary);
+}
+
+p {
+  color: var(--theme-text-secondary);
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+
+/* =========================================================
+   THEME SURFACE
+   ========================================================= */
+
+.theme-surface {
+  background-color: var(--theme-surface);
+
+  border-color: var(--theme-border);
+
+  box-shadow:
+    0 10px 35px var(--theme-shadow);
+}
+
+
+/* =========================================================
+   IMPORTANT — THREE.JS PROTECTION
+   ========================================================= */
+
+/*
+   DO NOT change:
+
+   .hero
+   .heroAnimation
+   canvas
+   canvas parent
+   position
+   z-index
+   width
+   height
+   overflow
+
+   Your neural animation depends on those styles.
+*/
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  body {
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+  }
+
+}

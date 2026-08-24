@@ -258,7 +258,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="https://abhinav-utkarsh.github.io/Abhinav_utkarsh_portfolio/"
+                  href="https://abhinavutkarsh.co.in"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

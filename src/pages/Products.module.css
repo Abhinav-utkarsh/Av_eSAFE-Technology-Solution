@@ -25,10 +25,12 @@
   padding-inline: var(--space-l);
 }
 
+
 .heroContent {
   max-width: 900px;
   margin: 0 auto;
 }
+
 
 .heroEyebrow {
   display: inline-flex;
@@ -48,6 +50,7 @@
   color: var(--color-accent-primary);
 }
 
+
 .heroContent h1 {
   max-width: 900px;
 
@@ -58,11 +61,15 @@
   line-height: 1.05;
 
   letter-spacing: -2px;
+
+  color: var(--color-text-primary);
 }
+
 
 .heroContent h1 span {
   color: var(--color-accent-primary);
 }
+
 
 .heroContent > p {
   max-width: 700px;
@@ -89,11 +96,13 @@
     var(--space-3xl);
 }
 
+
 .sectionHeading {
   max-width: 760px;
 
   margin-bottom: var(--space-2xl);
 }
+
 
 .sectionHeading > span {
   display: block;
@@ -111,19 +120,24 @@
   color: var(--color-accent-primary);
 }
 
+
 .sectionHeading h2 {
   margin: 0 0 var(--space-m);
 
   font-size: clamp(2rem, 4vw, 3.2rem);
 
   line-height: 1.15;
+
+  color: var(--color-text-primary);
 }
+
 
 .sectionHeading h2 strong {
   color: var(--color-accent-primary);
 
   font-weight: inherit;
 }
+
 
 .sectionHeading p {
   max-width: 680px;
@@ -167,7 +181,6 @@
 
   min-height: 480px;
 
-  /* Increased card breathing room */
   padding: 40px;
 
   box-sizing: border-box;
@@ -175,27 +188,32 @@
   background:
     linear-gradient(
       145deg,
-      rgba(22, 24, 48, 0.96),
-      rgba(11, 13, 31, 0.94)
+      var(--color-glass-bg),
+      rgba(0, 220, 255, 0.025)
     );
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.22);
+    var(--color-border);
 
   border-radius: var(--radius-m);
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.25),
+    0 20px 60px rgba(0, 0, 0, 0.15),
     inset 0 1px 0
     rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
 
   overflow: hidden;
 
   transition:
     transform 0.35s ease,
     border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    background 0.35s ease;
 }
 
 
@@ -267,11 +285,12 @@
     rgba(0, 220, 255, 0.55);
 
   box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 25px 70px rgba(0, 0, 0, 0.22),
     0 0 35px rgba(0, 200, 255, 0.08),
     inset 0 1px 0
     rgba(255, 255, 255, 0.05);
 }
+
 
 .productCard:hover::after {
   opacity: 1;
@@ -295,6 +314,7 @@
 
   margin-bottom: 32px;
 }
+
 
 .cardIcon {
   display: flex;
@@ -323,6 +343,7 @@
     rgba(0, 200, 255, 0.05);
 }
 
+
 .cardNumber {
   font-family:
     var(--font-family-mono);
@@ -332,7 +353,9 @@
   letter-spacing: 1px;
 
   color:
-    rgba(255, 255, 255, 0.25);
+    var(--color-text-secondary);
+
+  opacity: 0.65;
 }
 
 
@@ -379,6 +402,8 @@
   font-size: var(--fs-700);
 
   line-height: 1.15;
+
+  color: var(--color-text-primary);
 }
 
 
@@ -442,6 +467,7 @@
   margin-top: 28px;
 }
 
+
 .capability {
   display: flex;
 
@@ -450,12 +476,13 @@
   gap: 10px;
 
   color:
-    rgba(255, 255, 255, 0.72);
+    var(--color-text-secondary);
 
   font-size: var(--fs-200);
 
   line-height: 1.4;
 }
+
 
 .capability span {
   flex: 0 0 auto;
@@ -497,7 +524,7 @@
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.07);
+    var(--color-border);
 
   color:
     var(--color-accent-primary);
@@ -516,6 +543,7 @@
     color 0.3s ease;
 }
 
+
 .productCard:hover .cardFooter {
   gap: 16px;
 }
@@ -533,18 +561,19 @@
   background:
     linear-gradient(
       180deg,
-      rgba(15, 17, 38, 0.4),
-      rgba(20, 22, 45, 0.8)
+      rgba(0, 220, 255, 0.015),
+      var(--color-background-secondary)
     );
 
   border-top:
     1px solid
-    rgba(0, 220, 255, 0.08);
+    var(--color-border);
 
   border-bottom:
     1px solid
-    rgba(0, 220, 255, 0.08);
+    var(--color-border);
 }
+
 
 .philosophyGrid {
   display: grid;
@@ -557,6 +586,7 @@
 
   align-items: start;
 }
+
 
 .philosophyIntro > span {
   display: block;
@@ -576,6 +606,7 @@
     var(--color-accent-primary);
 }
 
+
 .philosophyIntro h2 {
   margin: 0 0 var(--space-m);
 
@@ -587,7 +618,10 @@
     );
 
   line-height: 1.15;
+
+  color: var(--color-text-primary);
 }
+
 
 .philosophyIntro h2 strong {
   display: block;
@@ -597,6 +631,7 @@
 
   font-weight: inherit;
 }
+
 
 .philosophyIntro > p {
   max-width: 600px;
@@ -624,6 +659,7 @@
   gap: 18px;
 }
 
+
 .principle {
   display: grid;
 
@@ -635,13 +671,17 @@
   padding: 24px;
 
   background:
-    rgba(15, 17, 37, 0.75);
+    var(--color-glass-bg);
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.12);
+    var(--color-border);
 
   border-radius: var(--radius-m);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
 
   transition:
     transform 0.3s ease,
@@ -649,15 +689,17 @@
     background 0.3s ease;
 }
 
+
 .principle:hover {
   transform: translateX(5px);
 
   background:
-    rgba(20, 23, 47, 0.9);
+    rgba(0, 220, 255, 0.045);
 
   border-color:
     rgba(0, 220, 255, 0.35);
 }
+
 
 .principleIcon {
   display: flex;
@@ -682,11 +724,15 @@
   border-radius: var(--radius-s);
 }
 
+
 .principle h3 {
   margin: 0 0 7px;
 
   font-size: var(--fs-400);
+
+  color: var(--color-text-primary);
 }
+
 
 .principle p {
   margin: 0;
@@ -708,6 +754,7 @@
   padding-block: var(--space-3xl);
 }
 
+
 .ctaInner {
   display: flex;
 
@@ -722,24 +769,30 @@
   background:
     linear-gradient(
       135deg,
-      rgba(18, 22, 48, 0.96),
-      rgba(10, 13, 30, 0.96)
+      var(--color-glass-bg),
+      rgba(0, 220, 255, 0.025)
     );
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.2);
+    var(--color-border);
 
   border-radius: var(--radius-m);
 
   box-shadow:
     0 25px 70px
-    rgba(0, 0, 0, 0.25);
+    rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
 }
+
 
 .ctaInner > div {
   max-width: 720px;
 }
+
 
 .ctaInner span {
   display: block;
@@ -757,6 +810,7 @@
     var(--color-accent-primary);
 }
 
+
 .ctaInner h2 {
   margin: 0 0 var(--space-s);
 
@@ -768,7 +822,10 @@
     );
 
   line-height: 1.15;
+
+  color: var(--color-text-primary);
 }
+
 
 .ctaInner h2 strong {
   color:
@@ -776,6 +833,7 @@
 
   font-weight: inherit;
 }
+
 
 .ctaInner p {
   margin: 0;
@@ -787,6 +845,7 @@
 
   line-height: 1.7;
 }
+
 
 .ctaButton {
   flex: 0 0 auto;
@@ -810,7 +869,8 @@
   background:
     var(--color-accent-primary);
 
-  color: #061018;
+  color:
+    var(--color-dark-primary);
 
   font-family:
     var(--font-family-mono);
@@ -827,6 +887,7 @@
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
+
 
 .ctaButton:hover {
   transform: translateY(-3px);
@@ -848,17 +909,20 @@
       repeat(2, minmax(0, 1fr));
   }
 
+
   .philosophyGrid {
     grid-template-columns: 1fr;
 
     gap: var(--space-2xl);
   }
 
+
   .ctaInner {
     flex-direction: column;
 
     align-items: flex-start;
   }
+
 }
 
 
@@ -878,15 +942,18 @@
       var(--space-xl);
   }
 
+
   .heroContent h1 {
     font-size: 2.5rem;
 
     letter-spacing: -1px;
   }
 
+
   .heroContent > p {
     font-size: var(--fs-400);
   }
+
 
   .productsSection {
     padding-block:
@@ -894,10 +961,12 @@
       var(--space-2xl);
   }
 
+
   .sectionHeading {
     margin-bottom:
       var(--space-xl);
   }
+
 
   .productsGrid {
     grid-template-columns: 1fr;
@@ -905,33 +974,39 @@
     gap: 20px;
   }
 
+
   .productCard {
     min-height: 440px;
 
-    /* Increased mobile padding */
     padding: 28px;
   }
+
 
   .cardTop {
     margin-bottom: 26px;
   }
 
+
   .capabilities {
     margin-top: 24px;
   }
 
+
   .cardFooter {
     padding-top: 24px;
   }
+
 
   .philosophySection {
     padding-block:
       var(--space-2xl);
   }
 
+
   .principles {
     gap: 14px;
   }
+
 
   .principle {
     grid-template-columns:
@@ -942,16 +1017,20 @@
     padding: 22px;
   }
 
+
   .principleIcon {
     width: 44px;
     height: 44px;
   }
 
+
   .ctaInner {
     padding: 28px 24px;
   }
 
+
   .ctaButton {
     width: 100%;
   }
+
 }

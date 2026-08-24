@@ -4,7 +4,9 @@
 
 .servicesPage {
   position: relative;
+
   min-height: 100vh;
+
   overflow: hidden;
 }
 
@@ -17,6 +19,7 @@
   padding-block: var(--space-3xl);
 }
 
+
 .introGrid {
   display: grid;
 
@@ -28,64 +31,84 @@
   align-items: start;
 }
 
+
 .introLabel {
   padding-top: 8px;
 }
 
-.introLabel span {
-  font-family: var(--font-family-mono);
 
-  font-size: var(--fs-200);
+.introLabel span {
+  font-family:
+    var(--font-family-mono);
+
+  font-size:
+    var(--fs-200);
 
   letter-spacing: 2px;
 
-  color: var(--color-accent-primary);
+  color:
+    var(--color-accent-primary);
 }
+
 
 .introLine {
   width: 55px;
+
   height: 1px;
 
   margin-top: var(--space-s);
 
-  background: var(--color-accent-primary);
+  background:
+    var(--color-accent-primary);
 
   opacity: 0.5;
 }
+
 
 .introContent {
   max-width: 850px;
 }
 
+
 .introContent h2 {
   margin: 0 0 var(--space-m);
 
-  font-size: clamp(
-    2rem,
-    4vw,
-    3.3rem
-  );
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.3rem
+    );
 
   line-height: 1.15;
+
+  color:
+    var(--color-text-primary);
 }
 
+
 .introContent h2 strong {
-  color: var(--color-accent-primary);
+  color:
+    var(--color-accent-primary);
 
   font-weight: inherit;
 }
+
 
 .introContent p {
   max-width: 800px;
 
   margin: 0 0 var(--space-m);
 
-  color: var(--color-text-secondary);
+  color:
+    var(--color-text-secondary);
 
-  font-size: var(--fs-400);
+  font-size:
+    var(--fs-400);
 
   line-height: 1.8;
 }
+
 
 .introContent p:last-child {
   margin-bottom: 0;
@@ -100,57 +123,73 @@
   padding-block: var(--space-3xl);
 }
 
+
 .sectionHeading {
   max-width: 800px;
 
   margin-bottom: var(--space-2xl);
 }
 
+
 .sectionHeading > span {
   display: block;
 
   margin-bottom: var(--space-s);
 
-  font-family: var(--font-family-mono);
+  font-family:
+    var(--font-family-mono);
 
-  font-size: var(--fs-200);
+  font-size:
+    var(--fs-200);
 
   letter-spacing: 2px;
 
   text-transform: uppercase;
 
-  color: var(--color-accent-primary);
+  color:
+    var(--color-accent-primary);
 }
+
 
 .sectionHeading h2 {
   margin: 0 0 var(--space-m);
 
-  font-size: clamp(
-    2rem,
-    4vw,
-    3.2rem
-  );
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.2rem
+    );
 
   line-height: 1.15;
+
+  color:
+    var(--color-text-primary);
 }
 
+
 .sectionHeading h2 strong {
-  color: var(--color-accent-primary);
+  color:
+    var(--color-accent-primary);
 
   font-weight: inherit;
 }
+
 
 .sectionHeading p {
   max-width: 700px;
 
   margin: 0;
 
-  color: var(--color-text-secondary);
+  color:
+    var(--color-text-secondary);
 
-  font-size: var(--fs-400);
+  font-size:
+    var(--fs-400);
 
   line-height: 1.7;
 }
+
 
 .serviceDetails {
   display: flex;
@@ -171,18 +210,19 @@
   background:
     linear-gradient(
       180deg,
-      rgba(15, 17, 38, 0.4),
-      rgba(20, 22, 45, 0.8)
+      var(--color-background-secondary),
+      var(--color-background-secondary)
     );
 
   border-top:
     1px solid
-    rgba(0, 220, 255, 0.08);
+    var(--color-border);
 
   border-bottom:
     1px solid
-    rgba(0, 220, 255, 0.08);
+    var(--color-border);
 }
+
 
 .capabilitiesGrid {
   display: grid;
@@ -192,6 +232,7 @@
 
   gap: 24px;
 }
+
 
 .capabilityCard {
   position: relative;
@@ -205,23 +246,26 @@
   background:
     linear-gradient(
       145deg,
-      rgba(22, 24, 48, 0.97),
-      rgba(10, 13, 31, 0.95)
+      var(--color-glass-bg),
+      var(--color-background-secondary)
     );
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.15);
+    var(--color-border);
 
-  border-radius: var(--radius-m);
+  border-radius:
+    var(--radius-m);
 
   overflow: hidden;
 
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
+
 
 .capabilityCard::before {
   content: '';
@@ -239,13 +283,16 @@
   background:
     rgba(0, 210, 255, 0.07);
 
-  filter: blur(45px);
+  filter:
+    blur(45px);
 
   pointer-events: none;
 }
 
+
 .capabilityCard:hover {
-  transform: translateY(-7px);
+  transform:
+    translateY(-7px);
 
   border-color:
     rgba(0, 220, 255, 0.4);
@@ -254,6 +301,7 @@
     0 20px 55px
     rgba(0, 0, 0, 0.3);
 }
+
 
 .capabilityIcon {
   position: relative;
@@ -281,8 +329,10 @@
     1px solid
     rgba(0, 220, 255, 0.2);
 
-  border-radius: var(--radius-s);
+  border-radius:
+    var(--radius-s);
 }
+
 
 .capabilityCard h3 {
   position: relative;
@@ -291,10 +341,15 @@
 
   margin: 0 0 12px;
 
-  font-size: var(--fs-500);
+  font-size:
+    var(--fs-500);
 
   line-height: 1.25;
+
+  color:
+    var(--color-text-primary);
 }
+
 
 .capabilityCard p {
   position: relative;
@@ -306,10 +361,12 @@
   color:
     var(--color-text-secondary);
 
-  font-size: var(--fs-300);
+  font-size:
+    var(--fs-300);
 
   line-height: 1.7;
 }
+
 
 .capabilityCheck {
   position: absolute;
@@ -332,20 +389,24 @@
   padding-block: var(--space-3xl);
 }
 
+
 .processHeader {
   max-width: 800px;
 
   margin-bottom: var(--space-2xl);
 }
 
+
 .processHeader > span {
   display: block;
 
   margin-bottom: var(--space-s);
 
-  font-family: var(--font-family-mono);
+  font-family:
+    var(--font-family-mono);
 
-  font-size: var(--fs-200);
+  font-size:
+    var(--fs-200);
 
   letter-spacing: 2px;
 
@@ -353,17 +414,23 @@
     var(--color-accent-primary);
 }
 
+
 .processHeader h2 {
   margin: 0 0 var(--space-m);
 
-  font-size: clamp(
-    2rem,
-    4vw,
-    3.2rem
-  );
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.2rem
+    );
 
   line-height: 1.15;
+
+  color:
+    var(--color-text-primary);
 }
+
 
 .processHeader h2 strong {
   color:
@@ -372,16 +439,19 @@
   font-weight: inherit;
 }
 
+
 .processHeader p {
   margin: 0;
 
   color:
     var(--color-text-secondary);
 
-  font-size: var(--fs-400);
+  font-size:
+    var(--fs-400);
 
   line-height: 1.7;
 }
+
 
 .processGrid {
   display: grid;
@@ -392,31 +462,37 @@
   gap: 24px;
 }
 
+
 .processCard {
   min-height: 280px;
 
   padding: 32px;
 
   background:
-    rgba(15, 17, 37, 0.82);
+    var(--color-glass-bg);
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.12);
+    var(--color-border);
 
-  border-radius: var(--radius-m);
+  border-radius:
+    var(--radius-m);
 
   transition:
     transform 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
+
 .processCard:hover {
-  transform: translateY(-6px);
+  transform:
+    translateY(-6px);
 
   border-color:
     rgba(0, 220, 255, 0.35);
 }
+
 
 .processTop {
   display: flex;
@@ -427,6 +503,7 @@
 
   margin-bottom: 28px;
 }
+
 
 .processIcon {
   display: flex;
@@ -448,24 +525,35 @@
     1px solid
     rgba(0, 220, 255, 0.18);
 
-  border-radius: var(--radius-s);
+  border-radius:
+    var(--radius-s);
 }
+
 
 .processTop > span {
   font-family:
     var(--font-family-mono);
 
-  font-size: var(--fs-200);
+  font-size:
+    var(--fs-200);
 
   color:
-    rgba(255, 255, 255, 0.25);
+    var(--color-text-secondary);
+
+  opacity: 0.65;
 }
+
 
 .processCard h3 {
   margin: 0 0 12px;
 
-  font-size: var(--fs-500);
+  font-size:
+    var(--fs-500);
+
+  color:
+    var(--color-text-primary);
 }
+
 
 .processCard p {
   margin: 0;
@@ -473,7 +561,8 @@
   color:
     var(--color-text-secondary);
 
-  font-size: var(--fs-300);
+  font-size:
+    var(--fs-300);
 
   line-height: 1.7;
 }
@@ -486,6 +575,7 @@
 .principlesSection {
   padding-block: var(--space-3xl);
 }
+
 
 .principlesCard {
   display: grid;
@@ -502,15 +592,16 @@
   background:
     linear-gradient(
       135deg,
-      rgba(18, 22, 48, 0.96),
-      rgba(10, 13, 30, 0.96)
+      var(--color-glass-bg),
+      var(--color-background-secondary)
     );
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.18);
+    var(--color-border);
 
-  border-radius: var(--radius-m);
+  border-radius:
+    var(--radius-m);
 
   overflow: hidden;
 }
@@ -531,6 +622,7 @@
 
   min-height: 340px;
 }
+
 
 .principleOrb {
   position: relative;
@@ -567,8 +659,10 @@
     rgba(0, 210, 255, 0.12);
 
   animation:
-    principlePulse 3s ease-in-out infinite;
+    principlePulse
+    3s ease-in-out infinite;
 }
+
 
 .principleRing {
   position: absolute;
@@ -583,8 +677,10 @@
   border-radius: 50%;
 
   animation:
-    principleRotate 12s linear infinite;
+    principleRotate
+    12s linear infinite;
 }
+
 
 .principleRingTwo {
   width: 280px;
@@ -593,32 +689,42 @@
   border-color:
     rgba(0, 220, 255, 0.1);
 
-  animation-duration: 20s;
+  animation-duration:
+    20s;
 
-  animation-direction: reverse;
+  animation-direction:
+    reverse;
 }
+
 
 @keyframes principleRotate {
 
   from {
-    transform: rotate(0deg);
+    transform:
+      rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    transform:
+      rotate(360deg);
   }
+
 }
+
 
 @keyframes principlePulse {
 
   0%,
   100% {
-    transform: scale(1);
+    transform:
+      scale(1);
   }
 
   50% {
-    transform: scale(1.06);
+    transform:
+      scale(1.06);
   }
+
 }
 
 
@@ -629,18 +735,21 @@
 .principlesContent > span {
   display: block;
 
-  margin-bottom: var(--space-s);
+  margin-bottom:
+    var(--space-s);
 
   font-family:
     var(--font-family-mono);
 
-  font-size: var(--fs-200);
+  font-size:
+    var(--fs-200);
 
   letter-spacing: 2px;
 
   color:
     var(--color-accent-primary);
 }
+
 
 .principlesContent h2 {
   margin: 0 0 var(--space-m);
@@ -653,7 +762,11 @@
     );
 
   line-height: 1.15;
+
+  color:
+    var(--color-text-primary);
 }
+
 
 .principlesContent h2 strong {
   display: block;
@@ -664,6 +777,7 @@
   font-weight: inherit;
 }
 
+
 .principlesContent > p {
   max-width: 680px;
 
@@ -672,7 +786,8 @@
   color:
     var(--color-text-secondary);
 
-  font-size: var(--fs-400);
+  font-size:
+    var(--fs-400);
 
   line-height: 1.75;
 }
@@ -690,6 +805,7 @@
   gap: 14px;
 }
 
+
 .principleList > div {
   display: flex;
 
@@ -698,13 +814,16 @@
   gap: 12px;
 
   color:
-    rgba(255, 255, 255, 0.75);
+    var(--color-text-secondary);
 
-  font-size: var(--fs-300);
+  font-size:
+    var(--fs-300);
 }
 
+
 .principleList svg {
-  flex: 0 0 auto;
+  flex:
+    0 0 auto;
 
   color:
     var(--color-accent-primary);
@@ -716,8 +835,10 @@
    ========================================================= */
 
 .servicesCta {
-  padding-block: var(--space-3xl);
+  padding-block:
+    var(--space-3xl);
 }
+
 
 .ctaInner {
   display: flex;
@@ -726,47 +847,60 @@
 
   justify-content: space-between;
 
-  gap: var(--space-2xl);
+  gap:
+    var(--space-2xl);
 
   padding: 48px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(18, 22, 48, 0.96),
-      rgba(10, 13, 30, 0.96)
+      var(--color-glass-bg),
+      var(--color-background-secondary)
     );
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.2);
+    var(--color-border);
 
-  border-radius: var(--radius-m);
+  border-radius:
+    var(--radius-m);
 
   box-shadow:
     0 25px 70px
     rgba(0, 0, 0, 0.25);
+
+  backdrop-filter:
+    blur(10px);
+
+  -webkit-backdrop-filter:
+    blur(10px);
 }
+
 
 .ctaInner > div {
   max-width: 720px;
 }
 
+
 .ctaInner > div > span {
   display: block;
 
-  margin-bottom: var(--space-s);
+  margin-bottom:
+    var(--space-s);
 
   font-family:
     var(--font-family-mono);
 
-  font-size: var(--fs-200);
+  font-size:
+    var(--fs-200);
 
   letter-spacing: 2px;
 
   color:
     var(--color-accent-primary);
 }
+
 
 .ctaInner h2 {
   margin: 0 0 var(--space-s);
@@ -779,14 +913,20 @@
     );
 
   line-height: 1.15;
+
+  color:
+    var(--color-text-primary);
 }
+
 
 .ctaInner h2 strong {
   color:
     var(--color-accent-primary);
 
-  font-weight: inherit;
+  font-weight:
+    inherit;
 }
+
 
 .ctaInner p {
   margin: 0;
@@ -794,10 +934,12 @@
   color:
     var(--color-text-secondary);
 
-  font-size: var(--fs-400);
+  font-size:
+    var(--fs-400);
 
   line-height: 1.7;
 }
+
 
 .ctaButton {
   display: inline-flex;
@@ -812,19 +954,23 @@
 
   padding: 0 26px;
 
-  flex: 0 0 auto;
+  flex:
+    0 0 auto;
 
-  border-radius: var(--radius-s);
+  border-radius:
+    var(--radius-s);
 
   background:
     var(--color-accent-primary);
 
-  color: #061018;
+  color:
+    var(--color-dark-primary);
 
   font-family:
     var(--font-family-mono);
 
-  font-size: var(--fs-300);
+  font-size:
+    var(--fs-300);
 
   font-weight: 700;
 
@@ -837,8 +983,10 @@
     box-shadow 0.3s ease;
 }
 
+
 .ctaButton:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
   box-shadow:
     0 12px 35px
@@ -858,15 +1006,18 @@
     gap: var(--space-l);
   }
 
+
   .capabilitiesGrid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
+
   .processGrid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
+
 
   .principlesCard {
     grid-template-columns: 1fr;
@@ -874,15 +1025,18 @@
     padding: 40px;
   }
 
+
   .principlesVisual {
     min-height: 280px;
   }
+
 
   .ctaInner {
     flex-direction: column;
 
     align-items: flex-start;
   }
+
 }
 
 
@@ -898,13 +1052,16 @@
   .processSection,
   .principlesSection,
   .servicesCta {
-    padding-block: var(--space-2xl);
+    padding-block:
+      var(--space-2xl);
   }
+
 
   .capabilitiesGrid,
   .processGrid {
     grid-template-columns: 1fr;
   }
+
 
   .capabilityCard,
   .processCard {
@@ -913,34 +1070,42 @@
     padding: 28px;
   }
 
+
   .principlesCard {
     padding: 28px;
   }
 
+
   .principlesVisual {
     min-height: 250px;
   }
+
 
   .principleRing {
     width: 150px;
     height: 150px;
   }
 
+
   .principleRingTwo {
     width: 220px;
     height: 220px;
   }
+
 
   .principleOrb {
     width: 72px;
     height: 72px;
   }
 
+
   .ctaInner {
     padding: 28px 24px;
   }
 
+
   .ctaButton {
     width: 100%;
   }
+
 }

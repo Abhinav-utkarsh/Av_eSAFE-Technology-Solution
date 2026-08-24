@@ -54,24 +54,29 @@
   background:
     linear-gradient(
       145deg,
-      rgba(19, 28, 55, 0.96),
-      rgba(7, 12, 28, 0.96)
+      var(--color-glass-bg),
+      rgba(0, 220, 255, 0.025)
     );
 
-  border: 1px solid rgba(0, 220, 255, 0.18);
+  border:
+    1px solid
+    var(--color-border);
 
   border-radius: 20px;
 
   overflow: hidden;
 
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.28);
+    0 20px 60px
+    rgba(0, 0, 0, 0.15);
 
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
+
 
 .profileCard:hover {
   transform: translateY(-5px);
@@ -80,11 +85,14 @@
     rgba(0, 220, 255, 0.4);
 
   box-shadow:
-    0 30px 70px rgba(0, 0, 0, 0.35);
+    0 30px 70px
+    rgba(0, 0, 0, 0.2);
 }
 
 
-/* subtle glow */
+/* =========================================================
+   SUBTLE GLOW
+   ========================================================= */
 
 .profileCard::before {
   content: "";
@@ -128,6 +136,7 @@
   justify-content: center;
 }
 
+
 .avatar {
   position: relative;
 
@@ -142,15 +151,18 @@
 
   border-radius: 50%;
 
-  border: 2px solid
+  border:
+    2px solid
     rgba(0, 220, 255, 0.55);
 
-  background: #101a32;
+  background:
+    var(--color-glass-bg);
 
   box-shadow:
     0 0 45px
     rgba(0, 210, 255, 0.18);
 }
+
 
 .avatarGlow {
   position: absolute;
@@ -171,6 +183,7 @@
     avatarPulse 4s ease-in-out infinite;
 }
 
+
 @keyframes avatarPulse {
 
   0%,
@@ -183,6 +196,7 @@
     transform: scale(1.08);
     opacity: 0.75;
   }
+
 }
 
 
@@ -196,6 +210,7 @@
   z-index: 3;
 }
 
+
 .profileInfo h3 {
   margin: 0 0 8px;
 
@@ -203,6 +218,7 @@
 
   line-height: 1.2;
 }
+
 
 .profileInfo p {
   margin: 0;
@@ -241,6 +257,7 @@
   margin-top: 26px;
 }
 
+
 .profileTags span {
   padding: 8px 13px;
 
@@ -252,7 +269,7 @@
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.14);
+    var(--color-border);
 
   border-radius: 999px;
 
@@ -283,6 +300,7 @@
   margin: 0 0 30px;
 }
 
+
 .founderIntro > span {
   display: block;
 
@@ -298,6 +316,7 @@
 
   letter-spacing: 2px;
 }
+
 
 .founderIntro h3 {
   margin: 0;
@@ -315,6 +334,7 @@
 
   letter-spacing: -1px;
 }
+
 
 .founderIntro h3 strong {
   color:
@@ -341,6 +361,7 @@
   line-height: 1.8;
 }
 
+
 .founderContent > p strong {
   color:
     var(--color-text-primary);
@@ -366,6 +387,7 @@
   margin-top: 30px;
 }
 
+
 .focusItem {
   display: flex;
 
@@ -380,18 +402,20 @@
   box-sizing: border-box;
 
   background:
-    rgba(0, 200, 255, 0.035);
+    var(--color-glass-bg);
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.11);
+    var(--color-border);
 
   border-radius: 10px;
 
   transition:
     transform 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
+
 
 .focusItem:hover {
   transform: translateY(-3px);
@@ -399,6 +423,7 @@
   border-color:
     rgba(0, 220, 255, 0.3);
 }
+
 
 .focusIcon {
   display: flex;
@@ -419,16 +444,18 @@
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.15);
+    var(--color-border);
 
   border-radius: 9px;
 }
+
 
 .focusItem h4 {
   margin: 0 0 3px;
 
   font-size: 0.95rem;
 }
+
 
 .focusItem p {
   margin: 0;
@@ -466,7 +493,7 @@
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.25);
+    var(--color-border);
 
   border-radius: 9px;
 
@@ -484,6 +511,7 @@
     background 0.3s ease,
     border-color 0.3s ease;
 }
+
 
 .profileButton:hover {
   transform: translateY(-3px);
@@ -516,14 +544,23 @@
   text-align: center;
 
   background:
-    rgba(15, 20, 42, 0.72);
+    var(--color-glass-bg);
 
   border:
     1px solid
-    rgba(0, 220, 255, 0.13);
+    var(--color-border);
 
   border-radius: 18px;
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
+
 
 .quoteMark {
   position: absolute;
@@ -542,6 +579,7 @@
 
   opacity: 0.18;
 }
+
 
 .founderQuote p {
   position: relative;
@@ -564,6 +602,7 @@
 
   line-height: 1.7;
 }
+
 
 .founderQuote span {
   color:
@@ -589,6 +628,7 @@
     padding-right: 30px;
   }
 
+
   .founderGrid {
     max-width: 950px;
 
@@ -598,9 +638,11 @@
     gap: 45px;
   }
 
+
   .founderIntro h3 {
     font-size: 2.5rem;
   }
+
 }
 
 
@@ -615,6 +657,7 @@
       70px 24px;
   }
 
+
   .founderGrid {
     max-width: 600px;
 
@@ -625,23 +668,28 @@
     margin-top: 50px;
   }
 
+
   .profileCard {
     max-width: 430px;
 
     margin: 0 auto;
   }
 
+
   .founderContent {
     width: 100%;
   }
+
 
   .founderIntro h3 {
     font-size: 2.2rem;
   }
 
+
   .focusGrid {
     grid-template-columns: 1fr;
   }
+
 }
 
 
@@ -656,44 +704,54 @@
       60px 18px;
   }
 
+
   .founderGrid {
     margin-top: 40px;
   }
+
 
   .profileCard {
     padding:
       30px 20px;
   }
 
+
   .avatarWrapper {
     width: 165px;
     height: 165px;
   }
+
 
   .avatar {
     width: 150px;
     height: 150px;
   }
 
+
   .avatarGlow {
     width: 160px;
     height: 160px;
   }
 
+
   .founderIntro h3 {
     font-size: 1.9rem;
   }
 
+
   .founderContent > p {
     font-size: 0.95rem;
   }
+
 
   .founderQuote {
     padding:
       32px 22px;
   }
 
+
   .profileButton {
     width: 100%;
   }
+
 }

@@ -5,19 +5,63 @@
 /* ------------------------- */
 
 :root {
+  /* =====================================================
+     DARK THEME — DEFAULT
+     ===================================================== */
+
   /* Colors */
-  --color-dark-primary: #0A0A1A; /* Deep, dark blue for backgrounds */
-  --color-dark-secondary: #1A1A2E; /* Slightly lighter dark shade for surfaces */
-  --color-accent-primary: #00F5FF; /* Bright cyan for highlights and CTAs */
-  --color-accent-secondary: #7E57C2; /* Sophisticated purple for secondary accents */
-  --color-text-primary: #E0E0E0; /* Light gray for primary text */
-  --color-text-secondary: #A0A0B0; /* Muted gray for secondary text */
-  --color-glass-bg: rgba(26, 26, 46, 0.6); /* Background for glassmorphism effect */
+  --color-dark-primary: #0A0A1A;
+  --color-dark-secondary: #1A1A2E;
+
+  --color-accent-primary: #00F5FF;
+  --color-accent-secondary: #7E57C2;
+
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #A0A0B0;
+
+  --color-glass-bg: rgba(26, 26, 46, 0.6);
+
   --color-border: rgba(0, 245, 255, 0.2);
 
-  /* Typography */
-  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-family-mono: 'Roboto Mono', monospace;
+
+  /* =====================================================
+     LIGHT THEME VARIABLES
+     ===================================================== */
+
+  --theme-background: #F7FAFC;
+  --theme-surface: #FFFFFF;
+
+  --theme-text-primary: #101828;
+  --theme-text-secondary: #475467;
+
+  --theme-accent: #0097A7;
+  --theme-accent-secondary: #6D4CC2;
+
+  --theme-border: rgba(0, 151, 167, 0.18);
+
+  --theme-glass-bg: rgba(255, 255, 255, 0.75);
+
+  --theme-shadow: rgba(15, 23, 42, 0.12);
+
+
+  /* =====================================================
+     TYPOGRAPHY
+     ===================================================== */
+
+  --font-family-sans:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --font-family-mono:
+    'Roboto Mono',
+    monospace;
+
 
   --fs-900: 3.5rem;
   --fs-800: 2.5rem;
@@ -27,23 +71,77 @@
   --fs-400: 1rem;
   --fs-300: 0.875rem;
 
-  /* Spacing System (based on 8px grid) */
-  --space-xs: 0.5rem;  /* 8px */
-  --space-s: 1rem;     /* 16px */
-  --space-m: 1.5rem;   /* 24px */
-  --space-l: 2rem;     /* 32px */
-  --space-xl: 3rem;    /* 48px */
-  --space-xxl: 4rem;   /* 64px */
 
-  /* Transitions */
+  /* =====================================================
+     SPACING SYSTEM
+     ===================================================== */
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+
+
+  /* =====================================================
+     TRANSITIONS
+     ===================================================== */
+
   --transition-fast: 200ms ease-in-out;
   --transition-smooth: 400ms ease-in-out;
 
-  /* Border Radius */
+
+  /* =====================================================
+     BORDER RADIUS
+     ===================================================== */
+
   --border-radius-small: 4px;
   --border-radius-medium: 8px;
   --border-radius-large: 16px;
 }
+
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
+:root[data-theme="light"] {
+
+  /*
+   * IMPORTANT:
+   * We change ONLY the existing design variables here.
+   *
+   * We do NOT touch:
+   * - canvas
+   * - hero
+   * - heroAnimation
+   * - position
+   * - z-index
+   * - width
+   * - height
+   * - overflow
+   */
+
+  --color-dark-primary: #F7FAFC;
+
+  --color-dark-secondary: #FFFFFF;
+
+  --color-accent-primary: #0097A7;
+
+  --color-accent-secondary: #6D4CC2;
+
+  --color-text-primary: #101828;
+
+  --color-text-secondary: #475467;
+
+  --color-glass-bg:
+    rgba(255, 255, 255, 0.75);
+
+  --color-border:
+    rgba(0, 151, 167, 0.18);
+}
+
 
 /* ------------------------- */
 /* --- GLOBAL RESETS & DEFAULTS --- */
@@ -57,35 +155,87 @@
   padding: 0;
 }
 
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
 body {
   font-family: var(--font-family-sans);
-  background-color: var(--color-dark-primary);
-  color: var(--color-text-primary);
+
+  background-color:
+    var(--color-dark-primary);
+
+  color:
+    var(--color-text-primary);
+
   line-height: 1.6;
+
   -webkit-font-smoothing: antialiased;
+
   -moz-osx-font-smoothing: grayscale;
+
+  transition:
+    background-color var(--transition-smooth),
+    color var(--transition-smooth);
 }
 
-h1, h2, h3, h4, h5, h6 {
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
+
   line-height: 1.2;
+
   color: var(--color-text-primary);
+
+  transition:
+    color var(--transition-smooth);
 }
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
 
 a {
   color: var(--color-accent-primary);
+
   text-decoration: none;
-  transition: color var(--transition-fast);
+
+  transition:
+    color var(--transition-fast);
 }
+
 
 a:hover {
   color: var(--color-text-primary);
 }
 
-img, picture, video, canvas, svg {
+
+/* =========================================================
+   MEDIA
+   ========================================================= */
+
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
+
   max-width: 100%;
 }
+
+
 /* =========================================================
    HIDE CHROME / EDGE SCROLLBAR
    KEEP PAGE SCROLLING ENABLED
@@ -93,33 +243,118 @@ img, picture, video, canvas, svg {
 
 html {
   scrollbar-width: none !important;
+
   -ms-overflow-style: none !important;
 }
+
 
 html::-webkit-scrollbar {
   width: 0 !important;
+
   height: 0 !important;
+
   display: none !important;
 }
+
 
 body {
   scrollbar-width: none !important;
+
   -ms-overflow-style: none !important;
 }
+
 
 body::-webkit-scrollbar {
   width: 0 !important;
+
   height: 0 !important;
+
   display: none !important;
 }
+
 
 #root {
   scrollbar-width: none !important;
+
   -ms-overflow-style: none !important;
 }
 
+
 #root::-webkit-scrollbar {
   width: 0 !important;
+
   height: 0 !important;
+
   display: none !important;
+}
+
+
+/* =========================================================
+   LIGHT MODE — PAGE BACKGROUND
+   ========================================================= */
+
+:root[data-theme="light"] body {
+  background-color:
+    var(--color-dark-primary);
+
+  color:
+    var(--color-text-primary);
+}
+
+
+:root[data-theme="light"] #root {
+  background-color:
+    var(--color-dark-primary);
+
+  color:
+    var(--color-text-primary);
+}
+
+
+/* =========================================================
+   OPTIONAL THEME UTILITY
+   Only components that explicitly use this class
+   will receive the theme surface.
+   ========================================================= */
+
+.theme-surface {
+  background:
+    var(--color-glass-bg);
+
+  border-color:
+    var(--color-border);
+}
+
+
+/* =========================================================
+   MOBILE TYPOGRAPHY
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  :root {
+    --fs-900: 2.5rem;
+    --fs-800: 2.1rem;
+    --fs-700: 1.75rem;
+    --fs-600: 1.35rem;
+    --fs-500: 1.1rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  :root {
+    --fs-900: 2.2rem;
+    --fs-800: 1.9rem;
+    --fs-700: 1.6rem;
+    --fs-600: 1.25rem;
+    --fs-500: 1rem;
+  }
+
 }

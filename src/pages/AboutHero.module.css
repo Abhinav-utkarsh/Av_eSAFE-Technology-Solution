@@ -2,6 +2,11 @@
    src/components/sections/about/AboutHero.module.css
    ========================================================= */
 
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   position: relative;
 
@@ -153,23 +158,35 @@
 
   box-sizing: border-box;
 
-  border: 1px solid rgba(0, 220, 255, 0.16);
+  border: 1px solid var(--color-border);
 
   border-radius: 18px;
 
+  /*
+   * Theme-aware glass surface.
+   * Dark mode keeps the original glass appearance.
+   * Light mode automatically uses the light theme surface.
+   */
   background:
     linear-gradient(
       145deg,
-      rgba(13, 24, 48, 0.84),
-      rgba(7, 12, 28, 0.92)
+      var(--color-glass-bg),
+      rgba(0, 220, 255, 0.025)
     );
 
   backdrop-filter: blur(10px);
 
+  -webkit-backdrop-filter: blur(10px);
+
   box-shadow:
-    0 18px 55px rgba(0, 0, 0, 0.2);
+    0 18px 55px rgba(0, 0, 0, 0.12);
 
   text-align: left;
+
+  transition:
+    background var(--transition-smooth),
+    border-color var(--transition-smooth),
+    box-shadow var(--transition-smooth);
 }
 
 
@@ -255,7 +272,9 @@
 
   flex-shrink: 0;
 
-  background: rgba(0, 220, 255, 0.35);
+  background: var(--color-accent-primary);
+
+  opacity: 0.35;
 }
 
 
