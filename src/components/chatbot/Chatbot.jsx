@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bot } from 'lucide-react';
 import './Chatbot.css';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
+
+  const [loadingText, setLoadingText] = useState('Thinking');
 
   const [messages, setMessages] = useState([
     {
@@ -13,10 +15,49 @@ const Chatbot = () => {
     },
   ]);
 
+  /* =========================================
+     Rotating AI Loading Messages
+     ========================================= */
+
+  useEffect(() => {
+    const hasLoadingMessage = messages.some(
+      (msg) => msg.isLoading
+    );
+
+    if (!hasLoadingMessage) {
+      return;
+    }
+
+    const loadingMessages = [
+      'Thinking',
+      'Understanding your question',
+      'Preparing your answer',
+      'Finding the best response',
+      'Almost there',
+    ];
+
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % loadingMessages.length;
+
+      setLoadingText(loadingMessages[index]);
+    }, 1400);
+
+    return () => clearInterval(interval);
+  }, [messages]);
+
+
+  /* =========================================
+     Send Message
+     ========================================= */
+
   const handleSend = async () => {
     if (!message.trim()) return;
 
     const userMessage = message.trim();
+
+    /* Add user message */
 
     setMessages((prev) => [
       ...prev,
@@ -28,11 +69,16 @@ const Chatbot = () => {
 
     setMessage('');
 
+    /* Add loading message */
+
+    setLoadingText('Thinking');
+
     setMessages((prev) => [
       ...prev,
       {
         role: 'assistant',
-        content: 'Thinking...',
+        content: 'Thinking',
+        isLoading: true,
       },
     ]);
 
@@ -51,6 +97,8 @@ const Chatbot = () => {
 
       const data = await response.json();
 
+      /* Replace loading message with AI response */
+
       setMessages((prev) => [
         ...prev.slice(0, -1),
         {
@@ -61,8 +109,12 @@ const Chatbot = () => {
             'Sorry, something went wrong.',
         },
       ]);
+
     } catch (error) {
+
       console.error('Chat error:', error);
+
+      /* Replace loading message with error */
 
       setMessages((prev) => [
         ...prev.slice(0, -1),
@@ -75,12 +127,19 @@ const Chatbot = () => {
     }
   };
 
+
+  /* =========================================
+     Enter Key
+     ========================================= */
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
+
       handleSend();
     }
   };
+
 
   return (
     <>
@@ -95,15 +154,20 @@ const Chatbot = () => {
           onClick={() => setIsOpen(true)}
           aria-label="Open Av_eSAFE AI"
         >
+
           <span className="chatbot-orbit-icon">
+
             <span className="orbit-core"></span>
 
             <span className="orbit-ring orbit-ring-1"></span>
 
             <span className="orbit-ring orbit-ring-2"></span>
+
           </span>
+
         </button>
       )}
+
 
       {/* =========================================
           Chat Window
@@ -112,7 +176,9 @@ const Chatbot = () => {
       {isOpen && (
         <div className="chatbot-window">
 
-          {/* Header */}
+          {/* =========================================
+              Header
+              ========================================= */}
 
           <div className="chatbot-header">
 
@@ -123,26 +189,37 @@ const Chatbot = () => {
                 {/* AI Assistant Icon */}
 
                 <span className="chatbot-mini-icon">
+
                   <Bot
                     size={17}
                     strokeWidth={2}
                     aria-hidden="true"
                   />
+
                 </span>
 
                 Av_eSAFE Technology Solution AI
 
               </div>
 
+
               <div className="chatbot-status">
+
                 Your Intelligent Digital Assistant
+
               </div>
 
-              <div className='chatbot-dev'>
+
+              <div className="chatbot-dev">
+
                 By: Abhinav Utkarsh ( Founder Av_eSAFE )
+
               </div>
 
             </div>
+
+
+            {/* Close */}
 
             <button
               type="button"
@@ -150,7 +227,9 @@ const Chatbot = () => {
               onClick={() => setIsOpen(false)}
               aria-label="Close chatbot"
             >
+
               ×
+
             </button>
 
           </div>
@@ -163,12 +242,38 @@ const Chatbot = () => {
           <div className="chatbot-messages">
 
             {messages.map((msg, index) => (
+
               <div
                 key={index}
                 className={`chatbot-message ${msg.role}`}
               >
-                {msg.content}
+
+                {msg.isLoading ? (
+
+                  <div className="chatbot-thinking">
+
+                    <span>
+                      {loadingText}
+                    </span>
+
+                    <span className="thinking-dots">
+
+                      <i></i>
+                      <i></i>
+                      <i></i>
+
+                    </span>
+
+                  </div>
+
+                ) : (
+
+                  msg.content
+
+                )}
+
               </div>
+
             ))}
 
           </div>
@@ -183,11 +288,14 @@ const Chatbot = () => {
             <input
               type="text"
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) =>
+                setMessage(e.target.value)
+              }
               onKeyDown={handleKeyDown}
               placeholder="Ask anything..."
               aria-label="Ask Av_eSAFE AI"
             />
+
 
             <button
               type="button"
@@ -195,7 +303,9 @@ const Chatbot = () => {
               disabled={!message.trim()}
               aria-label="Send message"
             >
+
               ➤
+
             </button>
 
           </div>
