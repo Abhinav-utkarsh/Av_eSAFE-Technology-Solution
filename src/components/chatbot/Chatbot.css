@@ -1171,3 +1171,72 @@ body.dark .chatbot-window {
   }
 
 }
+/* =========================================
+   MARKDOWN MESSAGE FORMATTING
+   ========================================= */
+
+.chatbot-message strong {
+  font-weight: 700;
+}
+
+.chatbot-message em {
+  font-style: italic;
+}
+
+.chatbot-markdown-line {
+  line-height: 1.6;
+}
+
+.chatbot-message-spacer {
+  height: 8px;
+}
+
+.chatbot-markdown-heading {
+  margin: 6px 0 8px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.chatbot-markdown-bullet {
+  display: flex;
+  gap: 7px;
+  line-height: 1.6;
+  margin: 2px 0;
+}
+
+.chatbot-bullet-dot {
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.chatbot-markdown-number {
+  display: flex;
+  gap: 7px;
+  line-height: 1.6;
+  margin: 2px 0;
+}
+
+.chatbot-number-label {
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.chatbot-inline-code {
+  font-family: monospace;
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.08);
+  font-size: 0.9em;
+}
+
+.chatbot-code-block {
+  margin: 8px 0;
+  padding: 10px 12px;
+  overflow-x: auto;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: 0.85em;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.08);
+  white-space: pre-wrap;
+}
